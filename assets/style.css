@@ -3,3 +3,5 @@
 .film-online{aspect-ratio:16/9;background:#17332c;border-radius:8px;overflow:hidden}.film-online iframe{display:block;width:100%;height:100%;border:0}
 
 .film-poster{padding:45px 28px;background:#245b46;color:#f6f4ec}.film-poster span{font-size:12px;letter-spacing:2px}.film-poster strong{display:block;font:54px Georgia,serif;margin:22px 0}.film-poster p{font:30px/1.3 Georgia,serif}.film-poster a{color:#d9eb95}
+
+#video{aspect-ratio:16/9;display:block;width:100%;background:#14251f}.local-option{margin:12px 0 22px}.local-option summary{font-size:14px;color:var(--muted)}

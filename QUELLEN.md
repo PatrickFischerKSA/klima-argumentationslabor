@@ -4,7 +4,7 @@
 
 - Originalsendung SRF: https://www.srf.ch/play/tv/sternstunde-philosophie/video/klimakrise-warum-handeln-wir-nicht-reto-knutti?urn=urn:srf:video:1c612fe7-f87a-4f59-a7c4-4a9cbf820ba0
 - Vom Nutzer angegebener YouTube-Film: https://www.youtube.com/watch?v=J77-r4-gwxE
-- Die öffentliche Fassung bindet den vom Nutzer angegebenen YouTube-Film ein und verlinkt das Original. Sie enthält keine Kopie des Films, keine Standbilder und keinen vollständigen Transkripttext. Lokale Dateien werden nur auf dem jeweiligen Gerät geöffnet.
+- Die öffentliche Fassung spielt die auf der Originalseite angebotene MP4 direkt vom SRF-Server ab und verlinkt das Original. Sie enthält keine Kopie des Films, keine Standbilder und keinen vollständigen Transkripttext. Lokale Dateien werden nur auf dem jeweiligen Gerät geöffnet.
 - Die Aufgaben wurden anhand des bereitgestellten Gesprächsmaterials entwickelt. Übungsbeispiele und Rekonstruktionen sind keine wörtlichen Knutti-Zitate. Sachangaben und Fundstellen am Original prüfen.
 
 ## Argumentationsprüfer
@@ -22,4 +22,8 @@ Die Argumentkarte verwendet eine vereinfachte Rekonstruktion nach Stephen E. Tou
 
 ## Veröffentlichung
 
-Veröffentlicht werden Lernfunktionen, didaktische Aufgaben, Quellenlinks und die Einbettung des vom Nutzer angegebenen YouTube-Films. Persönliche Lerntexte bleiben lokal. Der Film selbst wird nicht in das Repository kopiert.
+Veröffentlicht werden Lernfunktionen, didaktische Aufgaben, Quellenlinks und den direkten SRF-Videolink. Persönliche Lerntexte bleiben lokal. Der Film selbst wird nicht in das Repository kopiert.
+
+## Direkte Filmwiedergabe
+
+Der HTML5-Player verwendet den offiziellen «Herunterladen»-Link der oben genannten SRF-Sendungsseite. Am 27.10.2026 geprüft: HTTP 200 und Unterstützung von Byte-Range-Anfragen. Die Videodatei liegt weiterhin ausschliesslich auf dem SRF-Server.

@@ -32,3 +32,8 @@ function renderTranscript(){const t=window.KLIMA_TRANSCRIPT||'',q=$('#search').v
 $('#search').oninput=renderTranscript;renderTranscript();
 
 $('#transcriptFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;if(f.size>2000000){alert('Bitte eine TXT-Datei unter 2 MB wählen.');return;}try{window.KLIMA_TRANSCRIPT=await f.text();renderTranscript();}catch{alert('Transkript konnte nicht geöffnet werden.');}};
+
+const filmPlayer=$('#video');
+filmPlayer.addEventListener('error',()=>{$('#videoStatus').textContent='Der Film konnte nicht geladen werden. Öffne alternativ den SRF- oder YouTube-Link oder wähle unter «Bei Bedarf» deine lokale MP4.';});
+filmPlayer.addEventListener('loadedmetadata',()=>{$('#videoStatus').textContent='Film bereit · '+Math.floor(filmPlayer.duration/60)+':'+String(Math.floor(filmPlayer.duration%60)).padStart(2,'0')+' Min.';});
+filmPlayer.addEventListener('playing',()=>{$('#videoStatus').textContent='Film läuft. Du kannst jederzeit die aktuelle Zeit als Beleg übernehmen.';});
