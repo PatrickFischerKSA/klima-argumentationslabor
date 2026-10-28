@@ -49,3 +49,7 @@ Die bisherigen scene IDs, Argumentnummern und Videogrenzen bleiben erhalten. Die
 Auf ausdrücklichen Wunsch des Nutzers ist das bereitgestellte Originalhandbuch zusätzlich als PDF in `material/` hinterlegt und direkt im Framework-Einführungstext verlinkt. Die bytegleiche Kopie wird gegen die bereits dokumentierte Prüfsumme geprüft.
 
 Die fünf Denkaufgaben und der querliegende Vorbehalt bündeln sämtliche 14 Grundformen aus Teil I (PDF S. 1–2). Diese Gruppierung, die Prozessdarstellung und das Quartier-Beispiel sind eigene didaktische Ergänzungen; sie sind keine im Handbuch vorgegebene exklusive Hierarchie. Das Beispiel stellt keine neue empirische Aussage über das Gespräch dar.
+
+## Basis- und Fortgeschrittenenmodus
+
+Die fünf Basisgruppen und die 110 vereinfachten Szenenfragen sind eigene didaktische Ergänzungen. Sie sind nicht als zusätzliche Kategorien oder Zitate des Handbuchs ausgewiesen. Jede der 163 vorhandenen Argumenteinheiten bleibt mit ihrer vollständigen Handbuchanalyse verknüpft. Der Basismodus zeigt einen geeigneten Einstieg über einen Denkweg; mögliche Mehrfachzuordnungen stehen weiterhin im Fortgeschrittenenmodus.

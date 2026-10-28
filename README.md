@@ -69,3 +69,18 @@ Die neue Übersicht gruppiert die 14 Grundformen aus Teil I nach fünf Denkaufga
 Ein durchgehendes, als erfunden gekennzeichnetes Unterrichtsbeispiel verbindet Beobachtung, Hypothese, Prognose, Datenprüfung und begründetes Handeln. Die Übersicht unterscheidet Grundformen, formale Werkzeuge, Fehlerprüfung und psychologische Muster. Jede Gruppe verlinkt zu Definitionen und passenden Gesprächsargumenten. Ein 15-Minuten-Auftrag hilft beim Einsatz.
 
 `schlussformen-uebersicht.html` ist die separat druckbare Fassung; dort sind Beispiele und Arbeitsauftrag bereits aufgeklappt. Der Browser kann sie drucken oder als PDF speichern. `assets/data/teaching-map.json` dokumentiert die Gruppierung.
+
+## Zwei Lernlevels: Basis und Fortgeschritten
+
+Die neue Voreinstellung ist **Basis**. Der oben feststehende Button «Fortgeschritten: aus / ein» schaltet jederzeit zwischen beiden Ansichten um. Der Modus wird im localStorage des Browsers gemerkt und gilt auch für die separate Unterrichtsübersicht.
+
+- Basis: fünf verständliche Denkwege, vereinfachte Argumentkarten, eine einfache Kategorienauswahl, kurze Prüfhilfen, verständliche Szenentitel und zwei eigens formulierte Basisfragen pro Szene.
+- Fortgeschritten: alle Handbuch-Schlussformen, Prüfkategorien, Prüfstatus, ergänzte Prämissen, formale Rekonstruktionen und vollständige Einzelanalysen.
+
+Alle 55 Szenen und 163 Argumente bleiben in beiden Modi zugänglich. Das Umschalten rendert nur Katalog und Analysebereich neu; der Filmplayer wird weder neu geladen noch an eine andere Position gesetzt. Nicht sichtbare Expertenfilter gelten im Basismodus nicht, bleiben aber für die Rückkehr gespeichert.
+
+Antworten auf die Basisfragen (`bq0`, `bq1`) und Fortgeschrittenenfragen (`q0`, `q1`) werden getrennt gehalten. Gemeinsame Belegnotizen und Einwände bleiben erhalten. Markdown-Export und JSON-Sicherung enthalten beide Antwortgruppen; der Import akzeptiert beide Gruppen. Vorhandene Arbeitsstände bleiben kompatibel.
+
+Ein ausdrücklich aufgerufener Direktlink zu einer spezialisierten Handbuchkategorie öffnet den Fortgeschrittenenmodus. Beim manuellen Wechsel zurück zur Basis wird die einfache Übersicht angezeigt. Die Basisgruppen sind didaktische Einstiege; sie ersetzen oder ändern die Originalklassifikationen nicht.
+
+Daten: `assets/data/levels.json`, Offline-Fassung `assets/levels-data.js`. Steuerung: `assets/levels.js`.

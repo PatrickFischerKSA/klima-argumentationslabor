@@ -1,0 +1,518 @@
+{
+  "default": "basis",
+  "levels": [
+    "basis",
+    "fortgeschritten"
+  ],
+  "groups": [
+    {
+      "id": "regel",
+      "overviewId": "ableiten",
+      "label": "Mit einer Regel ableiten",
+      "forms": [
+        "I-01",
+        "I-12"
+      ],
+      "explanation": "Eine Regel wird richtig auf einen Fall angewendet. Wenn die Voraussetzungen stimmen, muss die Folgerung gelten.",
+      "check": "Wird die Regel richtig angewendet? Kann der Grund stimmen und die Behauptung trotzdem falsch sein?",
+      "example": "Alle Geräte dieser Gruppe brauchen Strom. Dieses Gerät gehört dazu. Also braucht es Strom."
+    },
+    {
+      "id": "erfahrung",
+      "overviewId": "erfahrung",
+      "label": "Mit Beispielen und Daten begründen",
+      "forms": [
+        "I-02",
+        "I-05",
+        "I-10",
+        "I-09"
+      ],
+      "explanation": "Beispiele oder Zahlen machen eine Aussage wahrscheinlicher. Neue Informationen können die Einschätzung verändern.",
+      "check": "Sind die Beispiele passend und zahlreich genug? Was genau wird mit den Zahlen verglichen?",
+      "example": "Mehrere passende Untersuchungen zeigen dasselbe Muster. Das spricht dafür, dass es auch in ähnlichen Fällen vorkommt — sicher ist es damit nicht."
+    },
+    {
+      "id": "erklaerung",
+      "overviewId": "erklaeren",
+      "label": "Ursachen und Folgen erklären",
+      "forms": [
+        "I-03",
+        "I-06",
+        "I-07",
+        "I-11"
+      ],
+      "explanation": "Ein Grund soll erklären, warum etwas geschieht oder welche Folge zu erwarten ist. Andere Erklärungen sind ebenfalls zu prüfen.",
+      "check": "Kann es einen anderen Grund geben? Welche Beobachtung würde die Erklärung stärken oder schwächen?",
+      "example": "Vielleicht steigen wenige Menschen auf Elektroautos um, weil der Ladezugang fehlt. Ob das stimmt, muss mit weiteren Informationen geprüft werden."
+    },
+    {
+      "id": "vergleich",
+      "overviewId": "vergleichen",
+      "label": "Mit einem Vergleich begründen",
+      "forms": [
+        "I-04",
+        "I-13"
+      ],
+      "explanation": "Von einer ähnlichen Situation wird auf eine andere geschlossen. Entscheidend sind die Gemeinsamkeiten und wichtigen Unterschiede.",
+      "check": "Sind die beiden Fälle gerade in dem Punkt ähnlich, auf den es ankommt?",
+      "example": "Auch ein kleiner Steuerbeitrag gehört zu einer gemeinsamen Aufgabe. Aber ein Steuerstaat ist nicht dasselbe wie weltweite Zusammenarbeit."
+    },
+    {
+      "id": "abwaegung",
+      "overviewId": "handeln",
+      "label": "Beurteilen und Handeln begründen",
+      "forms": [
+        "I-08",
+        "I-14"
+      ],
+      "explanation": "Sachgründe, Ziele und Werte tragen ein Urteil oder einen Handlungsvorschlag. Ein guter Einwand kann das Urteil verändern.",
+      "check": "Welches Ziel und welcher Wert zählen hier? Was spricht gegen den Vorschlag und wie wird das berücksichtigt?",
+      "example": "Ein besserer Ladezugang kann helfen. Vor einer Empfehlung prüfen wir auch Kosten, Fairness und Menschen, die sich das Auto noch nicht leisten können."
+    }
+  ],
+  "arguments": {
+    "A001": "erklaerung",
+    "A002": "abwaegung",
+    "A003": "erklaerung",
+    "A004": "erklaerung",
+    "A005": "abwaegung",
+    "A006": "abwaegung",
+    "A007": "abwaegung",
+    "A008": "abwaegung",
+    "A009": "abwaegung",
+    "A010": "vergleich",
+    "A011": "abwaegung",
+    "A012": "erklaerung",
+    "A013": "abwaegung",
+    "A014": "erklaerung",
+    "A015": "erfahrung",
+    "A016": "erklaerung",
+    "A017": "erklaerung",
+    "A018": "erklaerung",
+    "A019": "erklaerung",
+    "A020": "abwaegung",
+    "A021": "erklaerung",
+    "A022": "abwaegung",
+    "A023": "erklaerung",
+    "A024": "vergleich",
+    "A025": "erklaerung",
+    "A026": "erfahrung",
+    "A027": "vergleich",
+    "A028": "erklaerung",
+    "A029": "abwaegung",
+    "A030": "abwaegung",
+    "A031": "erklaerung",
+    "A032": "abwaegung",
+    "A033": "erklaerung",
+    "A034": "abwaegung",
+    "A035": "abwaegung",
+    "A036": "abwaegung",
+    "A037": "abwaegung",
+    "A038": "abwaegung",
+    "A039": "abwaegung",
+    "A040": "abwaegung",
+    "A041": "regel",
+    "A042": "abwaegung",
+    "A043": "abwaegung",
+    "A044": "abwaegung",
+    "A045": "abwaegung",
+    "A046": "abwaegung",
+    "A047": "erklaerung",
+    "A048": "erklaerung",
+    "A049": "regel",
+    "A050": "vergleich",
+    "A051": "erfahrung",
+    "A052": "erklaerung",
+    "A053": "erfahrung",
+    "A054": "regel",
+    "A055": "erklaerung",
+    "A056": "erklaerung",
+    "A057": "abwaegung",
+    "A058": "erfahrung",
+    "A059": "erfahrung",
+    "A060": "erklaerung",
+    "A061": "abwaegung",
+    "A062": "abwaegung",
+    "A063": "abwaegung",
+    "A064": "abwaegung",
+    "A065": "vergleich",
+    "A066": "regel",
+    "A067": "abwaegung",
+    "A068": "vergleich",
+    "A069": "abwaegung",
+    "A070": "vergleich",
+    "A071": "abwaegung",
+    "A072": "abwaegung",
+    "A073": "erfahrung",
+    "A074": "abwaegung",
+    "A075": "erklaerung",
+    "A076": "erklaerung",
+    "A077": "erklaerung",
+    "A078": "abwaegung",
+    "A079": "vergleich",
+    "A080": "vergleich",
+    "A081": "erklaerung",
+    "A082": "erklaerung",
+    "A083": "erfahrung",
+    "A084": "abwaegung",
+    "A085": "abwaegung",
+    "A086": "erklaerung",
+    "A087": "erklaerung",
+    "A088": "vergleich",
+    "A089": "regel",
+    "A090": "abwaegung",
+    "A091": "vergleich",
+    "A092": "erklaerung",
+    "A093": "vergleich",
+    "A094": "abwaegung",
+    "A095": "vergleich",
+    "A096": "erklaerung",
+    "A097": "erklaerung",
+    "A098": "erklaerung",
+    "A099": "abwaegung",
+    "A100": "abwaegung",
+    "A101": "abwaegung",
+    "A102": "abwaegung",
+    "A103": "erklaerung",
+    "A104": "erklaerung",
+    "A105": "abwaegung",
+    "A106": "erklaerung",
+    "A107": "erfahrung",
+    "A108": "abwaegung",
+    "A109": "vergleich",
+    "A110": "abwaegung",
+    "A111": "abwaegung",
+    "A112": "abwaegung",
+    "A113": "regel",
+    "A114": "abwaegung",
+    "A115": "vergleich",
+    "A116": "erfahrung",
+    "A117": "erklaerung",
+    "A118": "abwaegung",
+    "A119": "erklaerung",
+    "A120": "abwaegung",
+    "A121": "erfahrung",
+    "A122": "erfahrung",
+    "A123": "erfahrung",
+    "A124": "abwaegung",
+    "A125": "abwaegung",
+    "A126": "abwaegung",
+    "A127": "abwaegung",
+    "A128": "abwaegung",
+    "A129": "abwaegung",
+    "A130": "erklaerung",
+    "A131": "abwaegung",
+    "A132": "vergleich",
+    "A133": "abwaegung",
+    "A134": "abwaegung",
+    "A135": "abwaegung",
+    "A136": "erfahrung",
+    "A137": "erfahrung",
+    "A138": "erklaerung",
+    "A139": "erklaerung",
+    "A140": "erklaerung",
+    "A141": "erklaerung",
+    "A142": "abwaegung",
+    "A143": "erfahrung",
+    "A144": "abwaegung",
+    "A145": "abwaegung",
+    "A146": "erfahrung",
+    "A147": "erklaerung",
+    "A148": "abwaegung",
+    "A149": "erklaerung",
+    "A150": "abwaegung",
+    "A151": "erklaerung",
+    "A152": "vergleich",
+    "A153": "regel",
+    "A154": "erfahrung",
+    "A155": "erklaerung",
+    "A156": "erfahrung",
+    "A157": "erfahrung",
+    "A158": "abwaegung",
+    "A159": "abwaegung",
+    "A160": "abwaegung",
+    "A161": "erfahrung",
+    "A162": "abwaegung",
+    "A163": "abwaegung"
+  },
+  "sceneQuestions": {
+    "s01": [
+      "Was stellt Bleisch als Problem dar?",
+      "Warum passt das Beispiel der Kriegssendungen zu ihrer Frage?"
+    ],
+    "s02": [
+      "Welche Gründe nennt Knutti für die Müdigkeit beim Klimathema?",
+      "Was könnte eine positive Darstellung verändern?"
+    ],
+    "s03": [
+      "Worüber sind sich beide einig?",
+      "Was könnte eine zu positive Darstellung verschweigen?"
+    ],
+    "s04": [
+      "Was soll der Hinweis auf frühere Klimaveränderungen zeigen?",
+      "Welche wichtigen Unterschiede nennt Knutti zur heutigen Lage?"
+    ],
+    "s05": [
+      "Was bedeutet die Temperaturzahl für die genannten Lebensbereiche?",
+      "Warum müssen doppelte Erwärmung und doppelte Schäden nicht dasselbe sein?"
+    ],
+    "s06": [
+      "Warum kann der weltweite Durchschnitt die Schweizer Lage nur begrenzt zeigen?",
+      "Welche Gründe nennt Knutti für die Unterschiede?"
+    ],
+    "s07": [
+      "Warum scheint saubere Luft zunächst ein Problem zu sein?",
+      "Welcher Vorteil sauberer Luft gehört ebenfalls in die Abwägung?"
+    ],
+    "s08": [
+      "Was genau möchte Bleisch mit ihrer Nachfrage geklärt haben?",
+      "Welche Beispiele machen die erwarteten Folgen anschaulich?"
+    ],
+    "s09": [
+      "Was zeigen die Bilder und der Trinkwasservergleich?",
+      "Was können sie allein noch nicht beweisen?"
+    ],
+    "s10": [
+      "Welche Verluste beschreibt Knutti ausser Geldkosten?",
+      "Wie hilft der Hinweis auf das Volkslied beim Verstehen?"
+    ],
+    "s11": [
+      "Warum erhalten Gletscher viel Aufmerksamkeit?",
+      "Welche weniger sichtbaren Schäden sollten ebenfalls beachtet werden?"
+    ],
+    "s12": [
+      "Welchen zusätzlichen Vorteil nennt Knutti beim Elektroauto?",
+      "Was müsste ein fairer Vergleich der Fahrzeuge berücksichtigen?"
+    ],
+    "s13": [
+      "Warum stört sich Bleisch am Wort wunderbar?",
+      "Wie erklärt Knutti, was er damit gemeint hat?"
+    ],
+    "s14": [
+      "Warum genügt eine Zahl allein für ein Urteil nicht?",
+      "Wer soll am Ende über politische Massnahmen entscheiden?"
+    ],
+    "s15": [
+      "Was ist Bleischs Einwand gegen das politische Engagement?",
+      "Welche Aufgabe sieht Knutti für die Wissenschaft?"
+    ],
+    "s16": [
+      "Welche Zukunft möchte Knutti gestalten?",
+      "Gibt es mehr Möglichkeiten als nur Aufbruch oder Rückkehr in die Vergangenheit?"
+    ],
+    "s17": [
+      "Wie reagieren Menschen laut Knutti auf persönliche Vorwürfe?",
+      "Was soll nach seiner Ansicht eher zum Handeln bewegen?"
+    ],
+    "s18": [
+      "Welche historischen Beispiele bringt Bleisch gegen Knuttis Aussage vor?",
+      "Zeigen diese Beispiele, dass moralische Argumente immer wirken?"
+    ],
+    "s19": [
+      "Welche Möglichkeiten der Schweiz nennt Knutti?",
+      "Warum erwartet er deshalb einen besonderen Beitrag?"
+    ],
+    "s20": [
+      "Warum könnte der kleine Emissionsanteil gegen Schweizer Massnahmen sprechen?",
+      "Welche zusätzlichen Einflüsse und Emissionen nennt Knutti?"
+    ],
+    "s21": [
+      "Wer könnte nach Bleischs Einwand finanziell verlieren?",
+      "Beantwortet ein Vorteil für die ganze Gesellschaft schon diese persönliche Sorge?"
+    ],
+    "s22": [
+      "Welche Kosten zählt Knutti auf?",
+      "Welche Angaben braucht man, um Handeln und Nichthandeln fair zu vergleichen?"
+    ],
+    "s23": [
+      "Warum ist die Zahl der Menschen für den Vergleich wichtig?",
+      "Was macht der Vergleich mit Steuern verständlich?"
+    ],
+    "s24": [
+      "Was bedeutet für Knutti, dass alle gemeinsam Verantwortung tragen?",
+      "Warum sollen nicht alle gleich viel beitragen?"
+    ],
+    "s25": [
+      "Warum trifft die Klimakrise Menschen unterschiedlich stark?",
+      "Welchen Grund für mehr Hilfe durch wohlhabende Menschen nennt Bleisch?"
+    ],
+    "s26": [
+      "Warum setzt Knutti zusätzlich auf den eigenen Nutzen der Länder?",
+      "Macht ein politisch erfolgloses Argument eine Gerechtigkeitsforderung falsch?"
+    ],
+    "s27": [
+      "Welche Schritte sollen von weniger europäischem Verbrauch zu mehr Verbrauch anderswo führen?",
+      "Welche Mengen müsste man kennen, um eine weltweite Verschlechterung zu zeigen?"
+    ],
+    "s28": [
+      "Was soll die Geschichte mit den Pferden zeigen?",
+      "Passt der Bedarf eines einzelnen Haushalts zum gesamten Weltmarkt?"
+    ],
+    "s29": [
+      "Was soll das Indien-Beispiel widerlegen?",
+      "Was muss bei den genannten Prozentzahlen genau geklärt werden?"
+    ],
+    "s30": [
+      "Welche unterschiedliche Bedeutung hat günstig bei Bleisch und bei Knutti?",
+      "Welche Kosten fehlen möglicherweise im Kaufpreis?"
+    ],
+    "s31": [
+      "Wer verursacht nach der Passage Kosten für andere?",
+      "Welche Angaben braucht die Rechnung mit dem Australienflug?"
+    ],
+    "s32": [
+      "Was haben Abfallgebühren und CO2-Kosten gemeinsam?",
+      "Was ist am T-Shirt-Vergleich ein Beispiel und noch kein Beweis?"
+    ],
+    "s33": [
+      "Warum kann Vermeidung billiger sein als spätere Schäden?",
+      "Wie könnten Menschen unterschiedlich auf einen Aufpreis reagieren?"
+    ],
+    "s34": [
+      "Welche Hoffnung auf neue Technik stellt Bleisch zur Diskussion?",
+      "Warum ist eine Erfindung allein noch keine Lösung in grossem Massstab?"
+    ],
+    "s35": [
+      "Für welche Restemissionen hält Knutti Entfernung für nötig?",
+      "Was fehlt zwischen einer funktionierenden Anlage und einer ausreichenden Lösung?"
+    ],
+    "s36": [
+      "Warum sollte eine Firma für CO2-Entfernung bezahlen, wenn der Ausstoss sie nichts kostet?",
+      "Welche Regeln oder Anreize könnten diese Situation verändern?"
+    ],
+    "s37": [
+      "Wie soll Unterstützung neue Technik günstiger machen?",
+      "Was ist am Vergleich mit FCKW ähnlich und was anders?"
+    ],
+    "s38": [
+      "Welchen Einwand stellt Bleisch mit China und Amerika vor?",
+      "Beantwortet ein bequemeres Auto auch die Frage nach weltweiter Zusammenarbeit?"
+    ],
+    "s39": [
+      "Welche Hürden nennt Bleisch beim Umstieg auf ein Elektroauto?",
+      "Lösen tiefere Kosten über viele Jahre auch fehlendes Geld beim Kauf?"
+    ],
+    "s40": [
+      "Was führt Knutti gegen die Behauptung an, China tue nichts?",
+      "Reicht ein Beispiel aus der Autoindustrie für ein Urteil über das ganze Land?"
+    ],
+    "s41": [
+      "Wie kann der Hinweis auf immer neue Probleme vom Handeln abhalten?",
+      "Was soll ein persönlicher Plan nach Foer verändern?"
+    ],
+    "s42": [
+      "Warum hält Knutti ständiges bewusstes Planen für schwierig?",
+      "Ist damit bewiesen, dass ein einfacher persönlicher Vorsatz nutzlos ist?"
+    ],
+    "s43": [
+      "Welches Gegenbeispiel bringt Bleisch zur Planungsfähigkeit?",
+      "Meinen beide mit Plan genau dasselbe?"
+    ],
+    "s44": [
+      "Welche Entlastung erwartet Knutti von gemeinsamen Regeln?",
+      "Welche Sorge um die Selbstbestimmung stellt Bleisch dagegen?"
+    ],
+    "s45": [
+      "Was soll das Beispiel der LED-Lampen zeigen?",
+      "Wer kann einen gemeinsamen Plan mitbestimmen und wer nicht?"
+    ],
+    "s46": [
+      "Welche Unterschiede zwischen früheren und heutigen Bauprojekten werden behauptet?",
+      "Was müsste ein fairer Vergleich der Vergangenheit berücksichtigen?"
+    ],
+    "s47": [
+      "Welche Erklärungen nennt Knutti für heutige Schwierigkeiten?",
+      "Welche davon sind belegt und welche bleiben Vermutungen?"
+    ],
+    "s48": [
+      "Was bedeutet es, ein guter Vorfahr zu sein?",
+      "Wie unterscheiden sich eine moralische Pflicht und das Gefühl von Sinn?"
+    ],
+    "s49": [
+      "Welche Beispiele nennt Knutti für langfristiges Denken?",
+      "Welche kurzfristigen Anreize stellt er ihnen gegenüber?"
+    ],
+    "s50": [
+      "Welche persönlichen Nachteile eines Windparks will Bleisch sichtbar machen?",
+      "Welche Tatsachen müsste man für ein begründetes Urteil vor Ort kennen?"
+    ],
+    "s51": [
+      "Warum vergleicht Knutti Windräder mit Staumauern und Autobahnen?",
+      "Reicht ein früher akzeptierter Eingriff als Grund für einen neuen?"
+    ],
+    "s52": [
+      "Wie könnte frühere Verbauung die heutige Ablehnung neuer Technik erklären?",
+      "Was ist an dieser Erklärung anders als blosse Veränderungsangst?"
+    ],
+    "s53": [
+      "Warum hält Knutti das Bild unberührter Alpen für unvollständig?",
+      "Folgt aus früherer Nutzung, dass jeder weitere Eingriff erlaubt sein soll?"
+    ],
+    "s54": [
+      "Warum genügt der Satz Das haben wir immer so gemacht nicht allein?",
+      "Wann kann Erfahrung trotzdem ein guter Grund sein?"
+    ],
+    "s55": [
+      "Welche Gründe bündelt Bleisch am Schluss?",
+      "Welcher wichtige Einwand bleibt für dein eigenes Urteil offen?"
+    ]
+  },
+  "note": "Die fünf Basisgruppen sind didaktische Einstiege, keine neuen Handbuch-Schlussformen. Alle Argumente, Quellen, Szenen und Notizen bleiben in beiden Modi erhalten.",
+  "sceneTitles": {
+    "s01": "Warum handeln wir trotz der Warnungen so wenig?",
+    "s02": "Warum sind viele Menschen der Klimadebatte müde?",
+    "s03": "Geht Klimaschutz ohne Verzicht?",
+    "s04": "Früher gab es auch Klimawandel — was ist heute anders?",
+    "s05": "Was bedeuten 2,8 Grad Erwärmung?",
+    "s06": "Warum erwärmt sich die Schweiz stärker?",
+    "s07": "Ist saubere Luft plötzlich ein Problem?",
+    "s08": "Was zeigt uns ein heisser Sommer?",
+    "s09": "Was können Gletscherbilder zeigen?",
+    "s10": "Was verlieren wir ausser Geld?",
+    "s11": "Welche Schäden sehen wir kaum?",
+    "s12": "Was hat das Elektroauto mit Gesundheit zu tun?",
+    "s13": "Was meint Knutti mit einem wunderbaren Beispiel?",
+    "s14": "Warum genügen Zahlen allein nicht?",
+    "s15": "Wie politisch darf ein Forscher sein?",
+    "s16": "Wie wollen wir unsere Zukunft gestalten?",
+    "s17": "Helfen Vorwürfe oder positive Möglichkeiten?",
+    "s18": "Können moralische Argumente etwas verändern?",
+    "s19": "Was kann die Schweiz leisten?",
+    "s20": "Ist die Schweiz zu klein, um etwas zu bewirken?",
+    "s21": "Wer profitiert — und wer muss bezahlen?",
+    "s22": "Was kostet es, nichts zu tun?",
+    "s23": "Warum vergleicht Knutti Klimaschutz mit Steuern?",
+    "s24": "Sollen alle gleich viel beitragen?",
+    "s25": "Wer braucht besonders viel Schutz und Hilfe?",
+    "s26": "Was bringt Länder zum Handeln?",
+    "s27": "Kann weniger Verbrauch hier mehr Verbrauch anderswo auslösen?",
+    "s28": "Was zeigt der Pferdevergleich?",
+    "s29": "Was zeigen die Zahlen zu Indien?",
+    "s30": "Warum ist günstig nicht immer gleich günstig?",
+    "s31": "Wer soll für CO2-Schäden bezahlen?",
+    "s32": "Was haben Abfallgebühren und CO2 gemeinsam?",
+    "s33": "Vermeiden, aufräumen oder mehr bezahlen?",
+    "s34": "Wird neue Technik alles lösen?",
+    "s35": "Warum CO2 aus der Luft holen?",
+    "s36": "Wer bezahlt für das Einfangen von CO2?",
+    "s37": "Wie können Regeln neue Technik fördern?",
+    "s38": "Warum soll ich etwas tun, wenn andere nichts tun?",
+    "s39": "Was erschwert den Umstieg aufs Elektroauto?",
+    "s40": "Tut China wirklich nichts?",
+    "s41": "Hilft ein persönlicher Plan?",
+    "s42": "Warum ist ständiges Planen anstrengend?",
+    "s43": "Was verstehen beide unter einem Plan?",
+    "s44": "Gemeinsame Regeln oder eigene Entscheidungen?",
+    "s45": "Wer gestaltet die gemeinsamen Regeln mit?",
+    "s46": "Warum gelangen früher grosse Bauprojekte?",
+    "s47": "Warum tun wir uns heute mit gemeinsamen Projekten schwer?",
+    "s48": "Was wollen wir kommenden Generationen hinterlassen?",
+    "s49": "Warum wird oft nur kurzfristig gedacht?",
+    "s50": "Welche Nachteile kann ein Windpark für Einzelne haben?",
+    "s51": "Bewerten wir Windräder, Staudämme und Autobahnen gleich?",
+    "s52": "Ist die Landschaft schon zu stark verbaut?",
+    "s53": "Sind die Alpen unberührte Natur?",
+    "s54": "Reicht es, etwas immer schon so gemacht zu haben?",
+    "s55": "Welche Gründe bleiben am Ende besonders wichtig?"
+  }
+}

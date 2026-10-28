@@ -64,3 +64,13 @@ for(const id of grouped)assert(overview.includes('#kategorie-'+id));
 assert(h.includes('href="material/schlussfolgerungstypen-und-fehlschluesse-handbuch.pdf"'));
 assert(h.includes('id="schlussformen-uebersicht"'));
 console.log('OK: Originalhandbuch bytegleich verlinkt, alle 14 Grundformen gruppiert und eigene Druckübersicht vorhanden.');
+const levels=JSON.parse(fs.readFileSync(path.join(root,'assets/data/levels.json'),'utf8'));
+assert.equal(levels.default,'basis');assert.deepEqual(levels.levels,['basis','fortgeschritten']);assert.equal(levels.groups.length,5);
+assert.equal(Object.keys(levels.sceneTitles).length,55);assert.equal(Object.keys(levels.arguments).length,163);assert.equal(Object.keys(levels.sceneQuestions).length,55);
+for(const a of args)assert(levels.groups.some(g=>g.id===levels.arguments[a.id]));
+for(const s of scenes){const qs=levels.sceneQuestions[s.id];assert.equal(qs.length,2);assert(qs.every(q=>q.length>15));}
+assert.deepEqual(levels.groups.flatMap(g=>g.forms).sort(),fw.entries.filter(e=>e.section==='I').map(e=>e.id).sort());
+const levelContext={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/levels-data.js'),'utf8'),levelContext);
+assert.equal(JSON.stringify(levelContext.window.KLIMA_LEVELS),JSON.stringify(levels));
+assert(h.includes('id="levelToggle"')&&overview.includes('id="levelToggle"'));
+console.log('OK: Zwei Levels, fünf Basisgruppen für alle 163 Argumente, 110 einfache Szenenfragen und konsistente Offline-Daten.');
