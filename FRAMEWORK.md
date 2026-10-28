@@ -1345,3 +1345,8 @@ Beispiel aus dem Handbuch: «Ich liege zu 100 % richtig», obwohl die Datenlage 
 
 Im Gespräch nicht gesondert zugeordnet.
 
+
+
+## Handbuch in zwei Lernstufen
+
+`handbuch.html` bietet sechs Basiskapitel mit einzeln zuschaltbaren Differenzierungen. Der globale Lernniveauschalter öffnet alle Vertiefungen und das vollständige Register mit 164 Kategorien. Zwei feste Druckfassungen stehen unter `material/handbuch-basis.pdf` (6 Seiten) und `material/handbuch-fortgeschritten.pdf` (6 Leseseiten plus 14 Originalseiten) bereit. Alle Quellenverweise meinen die ursprünglichen Seiten des Originalhandbuchs.

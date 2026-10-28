@@ -2,6 +2,7 @@
 (() => {
  const config=window.KLIMA_LEVELS,groups=new Map(config.groups.map(g=>[g.id,g])), key='klima-learning-level-v1';
  let mode='basis';try{if(localStorage.getItem(key)==='fortgeschritten')mode='fortgeschritten';}catch{}
+ const requestedLevel=new URLSearchParams(location.search).get('niveau');if(config.levels.includes(requestedLevel))mode=requestedLevel;
  if(location.hash.startsWith('#kategorie-'))mode='fortgeschritten';
  const byId=id=>document.getElementById(id);
  function groupFor(a){return groups.get(config.arguments[a.id]);}
@@ -20,7 +21,8 @@
   if(!config.levels.includes(next)||next===mode)return;
   const old=mode;const probe=document.elementFromPoint(Math.min(innerWidth-15,innerWidth*.55),Math.min(innerHeight-15,170));
   const anchor=preserve?probe?.closest('article[id],section[id]'):null, anchorId=anchor?.id, oldTop=anchor?.getBoundingClientRect().top;
-  mode=next;try{localStorage.setItem(key,mode);}catch{}
+  mode=next;if(new URLSearchParams(location.search).has('niveau')){const u=new URL(location.href);u.searchParams.set('niveau',mode);history.replaceState(null,'',u);}
+  try{localStorage.setItem(key,mode);}catch{}
   refreshLabels();document.dispatchEvent(new CustomEvent('klima-level-change',{detail:{level:mode,previous:old}}));
   if(mode==='basis'&&location.hash.startsWith('#kategorie-')){history.replaceState(null,'','#framework');byId('framework')?.scrollIntoView({block:'start'});}
   else if(anchorId)requestAnimationFrame(()=>{const now=byId(anchorId);if(now&&now.getClientRects().length)window.scrollBy(0,now.getBoundingClientRect().top-oldTop);});

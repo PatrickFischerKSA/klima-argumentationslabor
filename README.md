@@ -84,3 +84,8 @@ Antworten auf die Basisfragen (`bq0`, `bq1`) und Fortgeschrittenenfragen (`q0`, 
 Ein ausdrücklich aufgerufener Direktlink zu einer spezialisierten Handbuchkategorie öffnet den Fortgeschrittenenmodus. Beim manuellen Wechsel zurück zur Basis wird die einfache Übersicht angezeigt. Die Basisgruppen sind didaktische Einstiege; sie ersetzen oder ändern die Originalklassifikationen nicht.
 
 Daten: `assets/data/levels.json`, Offline-Fassung `assets/levels-data.js`. Steuerung: `assets/levels.js`.
+
+
+## Handbuch in zwei Lernstufen
+
+`handbuch.html` bietet sechs Basiskapitel mit einzeln zuschaltbaren Differenzierungen. Der globale Lernniveauschalter öffnet alle Vertiefungen und das vollständige Register mit 164 Kategorien. Zwei feste Druckfassungen stehen unter `material/handbuch-basis.pdf` (6 Seiten) und `material/handbuch-fortgeschritten.pdf` (6 Leseseiten plus 14 Originalseiten) bereit. Alle Quellenverweise meinen die ursprünglichen Seiten des Originalhandbuchs.

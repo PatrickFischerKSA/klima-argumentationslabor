@@ -74,3 +74,8 @@ const levelContext={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root
 assert.equal(JSON.stringify(levelContext.window.KLIMA_LEVELS),JSON.stringify(levels));
 assert(h.includes('id="levelToggle"')&&overview.includes('id="levelToggle"'));
 console.log('OK: Zwei Levels, fünf Basisgruppen für alle 163 Argumente, 110 einfache Szenenfragen und konsistente Offline-Daten.');
+const hbData=JSON.parse(fs.readFileSync(path.join(root,'assets/data/handbook.json'),'utf8'));
+assert.equal(hbData.chapters.length,6);
+for(const ch of hbData.chapters){assert(ch.blocks.length>=2);assert(ch.tasks.length);for(const id of ch.depth)assert(fw.entries.some(e=>e.id===id));assert(scenes.some(s=>s.id===ch.scene.id&&s.arguments.some(a=>a.id===ch.scene.argument)));}
+for(const file of ['handbuch.html','assets/handbook.js','material/handbuch-basis.pdf','material/handbuch-fortgeschritten.pdf'])assert(fs.existsSync(path.join(root,file)));
+console.log('OK: Sechs Handbuchkapitel mit gültigen Vertiefungen, Filmszenen und zwei Druckfassungen.');
