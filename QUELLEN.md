@@ -27,3 +27,11 @@ Veröffentlicht werden Lernfunktionen, didaktische Aufgaben, Quellenlinks und de
 ## Direkte Filmwiedergabe
 
 Der HTML5-Player verwendet den offiziellen «Herunterladen»-Link der oben genannten SRF-Sendungsseite. Am 27.10.2026 geprüft: HTTP 200 und Unterstützung von Byte-Range-Anfragen. Die Videodatei liegt weiterhin ausschliesslich auf dem SRF-Server.
+
+## Szenen- und Argumentauswertung vom 28.10.2026
+
+- Neue Arbeitsgrundlage: vom Nutzer bereitgestelltes DOCX `KI-Multimedia-Tool_ai-generated_KI-Multimedia-Tool_Transkript_28-10-2026mp3_28-10-2026.docx`.
+- Offizielle Zeitbasis: [SRF-Untertitel (SWISS TXT), WebVTT](https://subtitles.eai-general.aws.srf.ch/srf/f5f60904-b095-4408-a418-09671868cc2a/episode/de/vod/vod.vtt), über die auf der SRF-Seite verwendete Medienmetadatenquelle ermittelt. Abgerufen am 28.10.2026.
+- Der Abgleich betrifft die Position im Film und den Wortlaut der Szenenanfänge. Er ist keine unabhängige Prüfung der im Gespräch behaupteten Zahlen oder Tatsachen.
+- Der veröffentlichte Atlas enthält eigene sinngemässe Rekonstruktionen und Analysefragen; weder das vollständige DOCX noch die vollständigen Untertitel werden mitveröffentlicht.
+- Die 55 lokalen Clips wurden neu codiert und mit `ffprobe` auf Dauer (Abweichung < 0,25 Sekunden je Clip), Video- und Audiospur geprüft. Die Clipdateien verbleiben lokal. Online werden dieselben Grenzen im offiziellen Stream als begrenzte Abspielabschnitte verwendet.
