@@ -35,3 +35,11 @@ Der HTML5-Player verwendet den offiziellen «Herunterladen»-Link der oben genan
 - Der Abgleich betrifft die Position im Film und den Wortlaut der Szenenanfänge. Er ist keine unabhängige Prüfung der im Gespräch behaupteten Zahlen oder Tatsachen.
 - Der veröffentlichte Atlas enthält eigene sinngemässe Rekonstruktionen und Analysefragen; weder das vollständige DOCX noch die vollständigen Untertitel werden mitveröffentlicht.
 - Die 55 lokalen Clips wurden neu codiert und mit `ffprobe` auf Dauer (Abweichung < 0,25 Sekunden je Clip), Video- und Audiospur geprüft. Die Clipdateien verbleiben lokal. Online werden dieselben Grenzen im offiziellen Stream als begrenzte Abspielabschnitte verwendet.
+
+## Schlussfolgerungs- und Fehlerframework (28.10.2026)
+
+Vom Nutzer bereitgestellte Quelle: «Schlussfolgerungstypen und Fehlschlüsse», Systematisches Nachschlagewerk, Oktober 2026, 14 Seiten. Die sichtbare Referenz übernimmt die 164 benannten Einträge, Definitionen und Beispiele samt Seitenangaben aus diesem bereitgestellten Material. Die Dateiprüfsumme ist zur Nachvollziehbarkeit in `assets/data/framework.json` hinterlegt. Das Original-PDF wird nicht zusätzlich veröffentlicht.
+
+Die 163 Einzelanalysen sind eigenständige didaktische Anwendungen, keine Aussagen des Handbuchs über das Gespräch. Ergänzte Prämissen, mögliche formale Rekonstruktionen und editorielle Prüfstatus sind als solche gekennzeichnet. Eine verlinkte Fehlerkategorie kann ausdrücklich nur abgegrenzt, als Risiko geprüft oder als im Gespräch zurückgewiesenes Muster erläutert sein. Sie ist deshalb keine automatische Beschuldigung der sprechenden Person. Nicht alle 164 Kategorien kommen im Gespräch vor.
+
+Die bisherigen scene IDs, Argumentnummern und Videogrenzen bleiben erhalten. Die früheren freien Beschreibungen werden in den Daten nur als Legacy-Felder dokumentiert; die Oberfläche verwendet die Schlussformen des neuen Handbuchs.

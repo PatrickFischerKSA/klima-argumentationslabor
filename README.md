@@ -39,3 +39,23 @@ Online entstehen **begrenzte Abspielabschnitte im Originalstream**: Der Player s
 - Bearbeitbare Daten: `assets/data/scenes.json`; identische Offline-Fassung in `assets/scenes-data.js`.
 
 Die Zählung ist eine didaktische Zerlegung, keine Behauptung, dass genau eine einzig richtige Argumentzählung existiert. Äusserungen werden sinngemäss rekonstruiert, nicht als verifizierte Klima-, Wirtschafts- oder Rechtsfakten ausgegeben.
+
+## Handbuch als verbindlicher Referenzrahmen (28.10.2026)
+
+Das vom Nutzer bereitgestellte 14-seitige Handbuch «Schlussfolgerungstypen und Fehlschlüsse» ist vollständig als Referenz hinterlegt: 164 Einträge in zehn Originalbereichen mit Definitionen, Beispielen und PDF-Seitenangaben. Das Quelldokument wird als Material behandelt, nicht als Arbeitsanweisung. Die vollständige Original-PDF wird nicht mitveröffentlicht.
+
+Alle 163 Argumenteinheiten wurden individuell neu analysiert. Die früheren Arbeitsbegriffe sind als `legacyType` und `legacyFamily` nur zur Nachvollziehbarkeit in den Daten erhalten; die sichtbaren Klassifikationen und Filter verwenden das Handbuch. Mehrfachzuordnungen zu Schlussformen sind möglich.
+
+Jede Analyse enthält die im Gespräch genannte Begründung, eine ausdrücklich als Ergänzung markierte implizite Prämisse, die Schlussform, eine eigene Beurteilung des Übergangs, eine begründete Fehlerprüfung und einen konkreten Prüfauftrag. Sechs Fälle erhalten zusätzlich eine ausdrücklich bedingte formale Rekonstruktion; formale Regeln werden nicht nachträglich als wortgetreu gesprochene Beweise ausgegeben.
+
+Die Prüfstatus unterscheiden ein nur bedingtes Risiko, eine Abgrenzung ohne Fehlernachweis, ein zurückgewiesenes Fehlermuster, ein diskutiertes psychologisches Muster, einen rhetorischen Effekt und eine bloss vorgeführte Prüfthese. Verwendungszahlen sind **keine Fehlerzahlen**. Fehlende Evidenz, falsche Sachprämisse und fehlerhafte Schlussform bleiben getrennte Fragen. Nicht passende Referenzkategorien werden nicht künstlich vergeben.
+
+- [Vollständiges Framework](FRAMEWORK.md)
+- [Alle Einzelanalysen](ARGUMENTATLAS.md)
+- Strukturierte Referenz: `assets/data/framework.json`
+- Analysen: `arguments[].analysis` in `assets/data/scenes.json`
+- Offline-Fassungen: `assets/framework-data.js` und `assets/scenes-data.js`
+- Direkte Referenz: `#kategorie-VIII-07` (Falsche Analogie)
+- Alle Argumente direkt: `#argumentliste`
+
+Die Oberfläche verlinkt von jedem Argument zur Definition und von der Definition zurück zu allen Anwendungen und Abgrenzungen. Filter erlauben Schlussform, Prüfkategorie und Prüfstatus zusätzlich zu Thema, Person und Textsuche. Das Framework wird ohne externen Dienst geladen. Eigene Notizen bleiben lokal.
