@@ -101,3 +101,14 @@ Alle sechs Kapitel enthalten drei Lernschritte mit Autokorrektur: Lernen, Repeti
 Alle 55 Szenen enthalten Autokorrektur-Aufgaben: pro Modus eine Rekonstruktionsfrage zu jeder der 163 Argumenteinheiten und eine eigens auf die jeweilige Szene abgestimmte Vertiefungsfrage. Damit gibt es 218 Aufgaben je Modus (436 insgesamt). Die Basis übt die Unterscheidung von Behauptung und Grund; Fortgeschritten rekonstruiert die Brückenprämisse und prüft den Geltungsanspruch. Jede Aufgabe verlinkt das passende Handbuchkapitel samt Selbstlernabschnitt. Fortgeschritten bietet zusätzlich direkte Kategorienanker; die Kategorien öffnen sich automatisch.
 
 Antworten werden unter `klima-scene-learning-v1` lokal je Szene und Modus gespeichert. Fehler können erneut bearbeitet und Szenen mit offenen Fehlern gezielt aufgerufen werden. Der Fortschritt erscheint im Szenenkatalog. JSON-Sicherung, Import, Markdown-Journal und das vorhandene Zurücksetzen berücksichtigen auch die neuen Szenenübungen. Die Filmposition bleibt bei der Bearbeitung und beim Wechsel des Lernniveaus erhalten.
+
+
+## Überarbeitete Antwortoptionen und Lerneinheiten
+
+Die 436 Szenenaufgaben enthalten jetzt 1308 einzeln erläuterte Antwortoptionen. Rekonstruktionsfragen unterscheiden sachlich relevante Aussagen nach ihrer Rolle (Grund, Ergebnis, zusätzliche Annahme). Die Vertiefungsfragen arbeiten mit nahen, aber nicht hinreichend begründeten Interpretationen statt pauschalen Ablenkern. Nach jeder Prüfung werden alle drei Optionen erläutert. Wegen der geänderten Optionen zählen Antworten früherer Fassungen nicht automatisch für die neue Revision.
+
+Acht zusammenhängende Themenblöcke decken das Gespräch ab. Mit den Reglern können eigene Bereiche von 2 bis 12 Szenen gewählt werden. Änderungen werden über «Ausschnitt übernehmen» angewendet. Der Player spielt die Einheit zusammenhängend ab und pausiert an ihrem Ende. «Fragen zur aktuellen Filmstelle» wechselt die Aufgaben, ohne den Film zurückzusetzen. Die Vor-/Zurück-Navigation bleibt innerhalb der Einheit.
+
+Standard ist eine Kernfrage pro Szene. Über «Argumente genauer üben» oder die Umfangswahl lassen sich alle Argumentübungen der Einheit hinzuschalten. Fortschritt und Fehlerwiederholung beziehen sich auf den gewählten Ausschnitt und Umfang. Leitfragen und ein Abschlussauftrag regen den Vergleich mehrerer Szenen an. Das vollständige Verzeichnis kann unabhängig davon eingeblendet werden.
+
+Die Auswahl bleibt lokal gespeichert und wird über die URL-Parameter `von`, `bis` und `umfang` geteilt. Die JSON-Sicherung enthält die Einheit und sämtliche gespeicherten Antworten, auch ausserhalb des aktuellen Ausschnitts; der Markdown-Export der Szenenübungen folgt der aktuellen Einheit und dem gewählten Umfang.

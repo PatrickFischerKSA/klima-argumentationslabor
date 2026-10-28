@@ -1,7 +1,8 @@
 'use strict';
 (() => {
  const data=window.KLIMA_SCENES, scenes=data.scenes, byId=new Map(scenes.map(s=>[s.id,s]));
- const video=document.getElementById('video'), fullSrc=video.getAttribute('src');
+ const video=document.getElementById('video'); let fullSrc=video.getAttribute('src');
+ const unit=window.KLIMA_UNIT;
  const el=id=>document.getElementById(id), escape=esc;
  const fwEntries=new Map(window.KLIMA_FRAMEWORK.entries.map(e=>[e.id,e]));
  const sceneTitle=s=>window.KLIMA_LEVEL.isAdvanced()?s.title:window.KLIMA_LEVELS.sceneTitles[s.id];
@@ -18,7 +19,7 @@
  const usedChecks=new Set(scenes.flatMap(s=>s.arguments.flatMap(a=>a.analysis.fallacyChecks.map(c=>c.id))));
  for(const ref of window.KLIMA_FRAMEWORK.entries.filter(e=>usedChecks.has(e.id))){const o=document.createElement('option');o.value=ref.id;o.textContent=ref.name;el('fallacyFilter').append(o);}
  for(const [value,label] of Object.entries(window.KLIMA_FRAMEWORK.statusLabels)){const o=document.createElement('option');o.value=value;o.textContent=label;el('assessmentFilter').append(o);}
- function matchingArguments(s){const q=el('sceneSearch').value.trim().toLocaleLowerCase('de-CH'), person=el('speakerFilter').value, type=window.KLIMA_LEVEL.isAdvanced()?el('typeFilter').value:'', check=window.KLIMA_LEVEL.isAdvanced()?el('fallacyFilter').value:'', status=window.KLIMA_LEVEL.isAdvanced()?el('assessmentFilter').value:'', basicType=window.KLIMA_LEVEL.isAdvanced()?'':el('basicTypeFilter').value;
+ function matchingArguments(s){if(!unit.catalogIncludes(s))return [];const q=el('sceneSearch').value.trim().toLocaleLowerCase('de-CH'), person=el('speakerFilter').value, type=window.KLIMA_LEVEL.isAdvanced()?el('typeFilter').value:'', check=window.KLIMA_LEVEL.isAdvanced()?el('fallacyFilter').value:'', status=window.KLIMA_LEVEL.isAdvanced()?el('assessmentFilter').value:'', basicType=window.KLIMA_LEVEL.isAdvanced()?'':el('basicTypeFilter').value;
   if(el('themeFilter').value&&s.theme!==el('themeFilter').value)return [];
   return s.arguments.filter(a=>(!person||speakerGroup(a.speaker)===person)&&(!basicType||window.KLIMA_LEVEL.groupFor(a).id===basicType)&&(!type||a.analysis.forms.some(r=>r.id===type))&&(!check&&!status||a.analysis.fallacyChecks.some(r=>(!check||r.id===check)&&(!status||r.status===status)))&&(!q||`${s.id} ${s.title} ${sceneTitle(s)} ${s.theme} ${a.id} ${a.speaker} ${a.claim} ${a.reason} ${a.type} ${a.analysis.assessment} ${a.analysis.fallacyChecks.map(r=>fwEntries.get(r.id).name+' '+r.label).join(' ')}`.toLocaleLowerCase('de-CH').includes(q)));
  }
@@ -34,42 +35,50 @@
   el('sceneAnalysis').querySelectorAll('[data-scene-note]').forEach(t=>t.oninput=()=>{if(!notes[s.id])notes[s.id]={};notes[s.id][t.dataset.sceneNote]=t.value;saveNotes();});
   el('sceneAnalysis').querySelectorAll('[data-copy-arg]').forEach(b=>b.onclick=()=>copyLink(s.id,b.dataset.copyArg,b));
   el('exportSceneNotes').onclick=exportNotes;
-  window.KLIMA_SCENE_LEARNING.mount(s,{argument:selectedArgument,onProgress:renderCatalog,onScene:id=>selectScene(id,false,'',false)});
+  window.KLIMA_SCENE_LEARNING.mount(s,{argument:selectedArgument,onProgress:()=>{renderCatalog();unit.refresh();},onScene:id=>selectScene(id,false,'',false)});unit.refresh();
  }
  function sceneURL(id,arg=''){const u=new URL(location.href);u.hash=`szene-${id}${arg?'-'+arg:''}`;return u.href;}
  async function copyLink(id,arg,button){const text=sceneURL(id,arg);try{await navigator.clipboard.writeText(text);button.textContent='Link kopiert ✓';}catch{button.textContent='Link markieren und kopieren';const input=document.createElement('input');input.value=text;button.after(input);input.select();}}
- function seekStart(play){const start=localClip?0:active.start;segmentEnded=false;el('sceneEnd').hidden=true;video.currentTime=start;if(play){const promise=video.play();if(promise)promise.catch(()=>{el('videoStatus').textContent='Die Szene ist ausgewählt. Zum Starten ▶ im Filmplayer drücken.';});}}
+ function seekStart(play){const start=localClip?0:(whole?unit.bounds().start:active.start);segmentEnded=false;el('sceneEnd').hidden=true;video.currentTime=start;if(play){const promise=video.play();if(promise)promise.catch(()=>{el('videoStatus').textContent='Die Szene ist ausgewählt. Zum Starten ▶ im Filmplayer drücken.';});}}
  function setSourceForScene(play){const src=window.KLIMA_LOCAL_CLIPS?`clips/${active.id}.mp4`:fullSrc;localClip=!!window.KLIMA_LOCAL_CLIPS;
   if(video.getAttribute('src')!==src){video.pause();video.setAttribute('src',src);video.load();video.addEventListener('loadedmetadata',()=>seekStart(play),{once:true});}
   else if(video.readyState>=1)seekStart(play);else video.addEventListener('loadedmetadata',()=>seekStart(play),{once:true});
  }
- function selectScene(id,play=false,arg='',scroll=false){if(!byId.has(id))return;active=byId.get(id);selectedArgument=arg;whole=false;el('wholeFilm').setAttribute('aria-pressed','false');el('wholeFilm').textContent='Zum ganzen Film wechseln';
+ function selectScene(id,play=false,arg='',scroll=false){if(!byId.has(id))return;unit.ensureScene(id);active=byId.get(id);selectedArgument=arg;whole=false;el('wholeFilm').setAttribute('aria-pressed','false');el('wholeFilm').textContent='Gewählte Einheit ansehen';el('replayScene').textContent='Szene wiederholen ↺';
   el('currentSceneTitle').textContent=sceneTitle(active);el('sceneTimeLabel').textContent=`${active.id.toUpperCase()} · Originalfilm ${format(active.start)}–${format(active.end)} · ${Math.round(active.duration)} Sekunden · stoppt am Szenenende`;
-  el('sceneTimeline').disabled=false;el('sceneTimeline').max=String(active.duration);el('sceneTimeline').value='0';el('scenePosition').textContent=`00:00 / ${format(active.duration)} · Filmzeit ${format(active.start)}`;
+  el('sceneTimeline').closest('label').firstChild.textContent='Position innerhalb der Szene';el('sceneTimeline').setAttribute('aria-label','Position innerhalb der Szene');el('sceneTimeline').disabled=false;el('sceneTimeline').max=String(active.duration);el('sceneTimeline').value='0';el('scenePosition').textContent=`00:00 / ${format(active.duration)} · Filmzeit ${format(active.start)}`;
   el('youtubeScene').href=`https://www.youtube.com/watch?v=J77-r4-gwxE&t=${Math.floor(active.start)}s`;
-  el('prevScene').disabled=active===scenes[0];el('nextScene').disabled=active===scenes[scenes.length-1];
+  el('prevScene').disabled=active===unit.selected()[0];el('nextScene').disabled=active===unit.selected().at(-1);
   el('localClipDownload').hidden=!window.KLIMA_LOCAL_CLIPS;if(window.KLIMA_LOCAL_CLIPS)el('localClipDownload').href=`clips/${active.id}.mp4`;
   history.replaceState(null,'',sceneURL(id,arg));renderAnalysis();renderCatalog();setSourceForScene(play);
   if(scroll){el('gespraech').scrollIntoView({block:'start'});if(arg)el('argument-'+arg)?.scrollIntoView({block:'nearest'});}
  }
  function currentFilmTime(){return video.currentTime+(localClip?active.start:0);}
- video.addEventListener('timeupdate',()=>{if(whole)return;const elapsed=Math.max(0,currentFilmTime()-active.start);el('sceneTimeline').value=String(Math.min(elapsed,active.duration));el('scenePosition').textContent=`${format(Math.min(elapsed,active.duration))} / ${format(active.duration)} · Filmzeit ${format(currentFilmTime())}`;
-  if(elapsed>=active.duration-.08&&!segmentEnded){segmentEnded=true;video.pause();el('sceneEnd').hidden=false;el('videoStatus').textContent='Szenenende erreicht.';}
+ function playbackBounds(){return whole?unit.bounds():{start:active.start,end:active.end,duration:active.duration};}
+ video.addEventListener('timeupdate',()=>{const b=playbackBounds(),elapsed=Math.max(0,currentFilmTime()-b.start);el('sceneTimeline').value=String(Math.min(elapsed,b.duration));el('scenePosition').textContent=`${format(Math.min(elapsed,b.duration))} / ${format(b.duration)} · Filmzeit ${format(currentFilmTime())}`;
+  if(elapsed>=b.duration-.08&&!segmentEnded){segmentEnded=true;video.pause();el('sceneEnd').hidden=false;el('sceneEnd').textContent=whole?'Lerneinheit beendet. Vergleiche jetzt die Szenen und bearbeite den Abschlussauftrag.':'Szene beendet. Bearbeite ihre Frage oder gehe zur nächsten Szene deiner Einheit.';el('videoStatus').textContent=whole?'Ende des gewählten Ausschnitts erreicht.':'Szenenende erreicht.';}
  });
- video.addEventListener('ended',()=>{if(!whole){segmentEnded=true;el('sceneEnd').hidden=false;}});
- video.addEventListener('play',()=>{if(!whole&&(segmentEnded||currentFilmTime()<active.start-.2||currentFilmTime()>=active.end-.08))seekStart(false);});
- video.addEventListener('seeking',()=>{if(!whole&&!localClip){if(video.currentTime<active.start-.2)video.currentTime=active.start;if(video.currentTime>active.end+.2)video.currentTime=active.end-.12;}});
- el('sceneTimeline').oninput=e=>{if(whole)return;segmentEnded=false;el('sceneEnd').hidden=true;video.currentTime=(localClip?0:active.start)+Number(e.target.value);};
- el('replayScene').onclick=()=>{if(whole)selectScene(active.id,true);else seekStart(true);};
- el('prevScene').onclick=()=>selectScene(scenes[Math.max(0,scenes.indexOf(active)-1)].id,true,'',true);
- el('nextScene').onclick=()=>selectScene(scenes[Math.min(scenes.length-1,scenes.indexOf(active)+1)].id,true,'',true);
- el('wholeFilm').onclick=()=>{if(whole){selectScene(active.id,false);return;}const t=currentFilmTime();whole=true;segmentEnded=false;el('sceneEnd').hidden=true;el('wholeFilm').setAttribute('aria-pressed','true');el('wholeFilm').textContent='Zur begrenzten Szene zurück';el('sceneTimeLabel').textContent='Ganzer Film · keine automatische Pause am Szenenende';el('sceneTimeline').disabled=true;
-  if(localClip){localClip=false;video.setAttribute('src',fullSrc);video.load();video.addEventListener('loadedmetadata',()=>{video.currentTime=t;},{once:true});}
- };
+ video.addEventListener('ended',()=>{segmentEnded=true;el('sceneEnd').hidden=false;});
+ video.addEventListener('play',()=>{const b=playbackBounds();if(segmentEnded||currentFilmTime()<b.start-.2||currentFilmTime()>=b.end-.08)seekStart(false);});
+ video.addEventListener('seeking',()=>{if(!localClip){const b=playbackBounds();if(video.currentTime<b.start-.2)video.currentTime=b.start;if(video.currentTime>b.end+.2)video.currentTime=b.end-.12;}});
+ el('sceneTimeline').oninput=e=>{segmentEnded=false;el('sceneEnd').hidden=true;video.currentTime=(localClip?0:playbackBounds().start)+Number(e.target.value);};
+ el('replayScene').onclick=()=>seekStart(true);
+ el('prevScene').onclick=()=>{const list=unit.selected();selectScene(list[Math.max(0,list.indexOf(active)-1)].id,true,'',true);};
+ el('nextScene').onclick=()=>{const list=unit.selected();selectScene(list[Math.min(list.length-1,list.indexOf(active)+1)].id,true,'',true);};
+ function startUnit(play=true){video.pause();whole=true;localClip=false;segmentEnded=false;active=unit.first();selectedArgument='';const b=unit.bounds();el('sceneEnd').hidden=true;el('wholeFilm').setAttribute('aria-pressed','true');el('wholeFilm').textContent='Zur Einzelszene zurück';el('replayScene').textContent='Einheit wiederholen ↺';el('currentSceneTitle').textContent=unit.title();el('sceneTimeLabel').textContent=`Lerneinheit ${unit.selected()[0].id.toUpperCase()}–${unit.selected().at(-1).id.toUpperCase()} · ${format(b.start)}–${format(b.end)} · stoppt am Ende des Ausschnitts`;el('sceneTimeline').closest('label').firstChild.textContent='Position innerhalb der Lerneinheit';el('sceneTimeline').setAttribute('aria-label','Position innerhalb der Lerneinheit');el('sceneTimeline').disabled=false;el('sceneTimeline').max=b.duration.toFixed(2);el('sceneTimeline').value='0';el('prevScene').disabled=true;el('nextScene').disabled=unit.selected().length<2;el('youtubeScene').href=`https://www.youtube.com/watch?v=J77-r4-gwxE&t=${Math.floor(b.start)}s`;el('localClipDownload').hidden=true;renderAnalysis();renderCatalog();
+  if(video.getAttribute('src')!==fullSrc){video.setAttribute('src',fullSrc);video.load();video.addEventListener('loadedmetadata',()=>seekStart(play),{once:true});}else if(video.readyState>=1)seekStart(play);else video.addEventListener('loadedmetadata',()=>seekStart(play),{once:true});
+ }
+ el('wholeFilm').onclick=()=>{if(whole){video.pause();selectScene(active.id,false);}else startUnit(true);};
+ const atTime=document.createElement('button');atTime.id='unitQuestionAtTime';atTime.type='button';atTime.textContent='Fragen zur aktuellen Filmstelle';el('scenePosition').after(atTime);
+ atTime.onclick=()=>{const now=currentFilmTime(),s=unit.selected().find(s=>now>=s.start&&now<s.end)||(now<unit.bounds().start?unit.first():unit.selected().at(-1));active=s;selectedArgument='';el('youtubeScene').href=`https://www.youtube.com/watch?v=J77-r4-gwxE&t=${Math.floor(s.start)}s`;el('prevScene').disabled=s===unit.first();el('nextScene').disabled=s===unit.selected().at(-1);renderAnalysis();renderCatalog();if(!whole)el('currentSceneTitle').textContent=sceneTitle(active);el('sceneLearning').scrollIntoView({block:'start'});};
+ document.addEventListener('klima-unit-change',event=>{if(event.detail.rangeChanged){video.pause();selectScene(unit.first().id,false);}else{renderAnalysis();renderCatalog();}});
+ document.addEventListener('klima-unit-catalog',renderCatalog);
+ document.addEventListener('klima-unit-open-scene',event=>{video.pause();selectScene(event.detail.id,false,'',true);});
+ document.addEventListener('klima-unit-play',()=>{startUnit(true);el('gespraech').scrollIntoView({block:'start'});});
  // This button also works with physically cut local clips: the journal always gets original-film time.
  el('stamp').onclick=()=>{const t=Math.floor(currentFilmTime());state.time=format(t);hydrate();persist();};
  // A user-selected file is treated as the full original film, not as a pre-cut clip.
- el('videoFile').addEventListener('change',()=>{if(!el('videoFile').files[0])return;whole=true;localClip=false;el('sceneTimeLabel').textContent='Eigene Videodatei · ganzer Film';el('wholeFilm').textContent='Zur SRF-Szene zurück';});
+ el('videoFile').addEventListener('change',()=>{if(!el('videoFile').files[0])return;fullSrc=video.getAttribute('src');startUnit(false);});
  el('copySceneLink').onclick=()=>copyLink(active.id,'',el('copySceneLink'));
  function sceneNotesText(){let text='# Szenenjournal – Klimakrise und Argumentation\n\n';for(const s of scenes){const n=notes[s.id];if(!n||!Object.values(n).some(v=>typeof v==='string'&&v.trim()))continue;text+=`## ${s.id.toUpperCase()} · ${format(s.start)}–${format(s.end)} · ${s.title}\n\n${sceneURL(s.id)}\n\n`;for(const [level,questions,prefix] of [['Basis',window.KLIMA_LEVELS.sceneQuestions[s.id],'bq'],['Fortgeschritten',s.questions,'q']]){if(questions.some((q,i)=>typeof n[prefix+i]==='string'&&n[prefix+i].trim())){text+=`### ${level}\n\n`;questions.forEach((q,i)=>{text+=`#### ${q}\n\n${n[prefix+i]||'Noch offen'}\n\n`;});}}text+=`### Schlussregel\n\n${n.warrant||'Noch offen'}\n\n### Gegenargument / Quellenprüfung\n\n${n.critical||'Noch offen'}\n\n`;}
   return text;
@@ -86,11 +95,9 @@
  function readRoute(){const m=location.hash.match(/^#szene-(s\d{2})(?:-(A\d{3}))?$/);if(m&&byId.has(m[1]))selectScene(m[1],false,m[2]||'',true);}
  document.addEventListener('klima-level-change',e=>{
   if(e.detail.previous==='fortgeschritten')openReviews=[...el('sceneAnalysis').querySelectorAll('details[data-review][open]')].map(n=>n.dataset.review);
-  renderCatalog();renderAnalysis();el('currentSceneTitle').textContent=sceneTitle(active);
+  renderCatalog();renderAnalysis();el('currentSceneTitle').textContent=whole?unit.title():sceneTitle(active);
   if(window.KLIMA_LEVEL.isAdvanced())for(const id of openReviews){const d=el('sceneAnalysis').querySelector(`details[data-review="${id}"]`);if(d)d.open=true;}
  });
  window.addEventListener('hashchange',readRoute);
- const hash=location.hash;selectScene(scenes[0].id,false);if(hash.startsWith('#szene-')){history.replaceState(null,'',hash);readRoute();}else{history.replaceState(null,'',hash||'#start');if(hash==='#argumentliste'){setView('arguments');el('szenen').scrollIntoView({block:'start'});}}
- // Reset scene mode after returning from whole-film mode.
- const originalSelect=el('sceneTimeline');new MutationObserver(()=>{originalSelect.disabled=whole;}).observe(el('wholeFilm'),{attributes:true,attributeFilter:['aria-pressed']});
+ const hash=location.hash;const initial=hash.match(/^#szene-(s\d{2})/);selectScene(initial&&byId.has(initial[1])?initial[1]:unit.first().id,false);if(hash.startsWith('#szene-')){history.replaceState(null,'',hash);readRoute();}else{history.replaceState(null,'',hash||'#start');if(hash==='#argumentliste'){setView('arguments');el('szenen').scrollIntoView({block:'start'});}}
 })();
