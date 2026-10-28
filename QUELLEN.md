@@ -43,3 +43,9 @@ Vom Nutzer bereitgestellte Quelle: «Schlussfolgerungstypen und Fehlschlüsse»,
 Die 163 Einzelanalysen sind eigenständige didaktische Anwendungen, keine Aussagen des Handbuchs über das Gespräch. Ergänzte Prämissen, mögliche formale Rekonstruktionen und editorielle Prüfstatus sind als solche gekennzeichnet. Eine verlinkte Fehlerkategorie kann ausdrücklich nur abgegrenzt, als Risiko geprüft oder als im Gespräch zurückgewiesenes Muster erläutert sein. Sie ist deshalb keine automatische Beschuldigung der sprechenden Person. Nicht alle 164 Kategorien kommen im Gespräch vor.
 
 Die bisherigen scene IDs, Argumentnummern und Videogrenzen bleiben erhalten. Die früheren freien Beschreibungen werden in den Daten nur als Legacy-Felder dokumentiert; die Oberfläche verwendet die Schlussformen des neuen Handbuchs.
+
+## Ergänzte Unterrichtsübersicht
+
+Auf ausdrücklichen Wunsch des Nutzers ist das bereitgestellte Originalhandbuch zusätzlich als PDF in `material/` hinterlegt und direkt im Framework-Einführungstext verlinkt. Die bytegleiche Kopie wird gegen die bereits dokumentierte Prüfsumme geprüft.
+
+Die fünf Denkaufgaben und der querliegende Vorbehalt bündeln sämtliche 14 Grundformen aus Teil I (PDF S. 1–2). Diese Gruppierung, die Prozessdarstellung und das Quartier-Beispiel sind eigene didaktische Ergänzungen; sie sind keine im Handbuch vorgegebene exklusive Hierarchie. Das Beispiel stellt keine neue empirische Aussage über das Gespräch dar.

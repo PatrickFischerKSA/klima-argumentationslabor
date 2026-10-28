@@ -51,3 +51,16 @@ assert(!args.find(a=>a.id==='A079').analysis.forms.some(r=>r.id==='I-12'));
 assert(args.find(a=>a.id==='A118').analysis.fallacyChecks.every(r=>r.status==='zurueckgewiesen'));
 assert(args.find(a=>a.id==='A110').analysis.fallacyChecks.every(r=>r.status==='pruefthese'));
 console.log('OK: 164 quellentreue Frameworkeinträge, 163 individuelle Einzelanalysen, gültige Querverweise und sechs bedingte formale Rekonstruktionen.');
+const teaching=JSON.parse(fs.readFileSync(path.join(root,'assets/data/teaching-map.json'),'utf8'));
+const grouped=teaching.groups.flatMap(g=>g.ids).concat(teaching.crosscutting);
+assert.equal(teaching.groups.length,5);assert.equal(grouped.length,14);assert.equal(new Set(grouped).size,14);
+assert.deepEqual([...grouped].sort(),fw.entries.filter(e=>e.section==='I').map(e=>e.id).sort());
+for(const group of teaching.groups){const [sid,aid]=group.scene.split('-');assert(scenes.some(s=>s.id===sid&&s.arguments.some(a=>a.id===aid)));}
+const handbook=fs.readFileSync(path.join(root,'material/schlussfolgerungstypen-und-fehlschluesse-handbuch.pdf'));
+assert.equal(handbook.subarray(0,4).toString(),'%PDF');
+assert.equal(require('node:crypto').createHash('sha256').update(handbook).digest('hex'),fw.source.sha256);
+const overview=fs.readFileSync(path.join(root,'schlussformen-uebersicht.html'),'utf8');
+for(const id of grouped)assert(overview.includes('#kategorie-'+id));
+assert(h.includes('href="material/schlussfolgerungstypen-und-fehlschluesse-handbuch.pdf"'));
+assert(h.includes('id="schlussformen-uebersicht"'));
+console.log('OK: Originalhandbuch bytegleich verlinkt, alle 14 Grundformen gruppiert und eigene Druckübersicht vorhanden.');

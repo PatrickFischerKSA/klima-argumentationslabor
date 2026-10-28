@@ -1,0 +1,87 @@
+{
+  "source": "Handbuch Teil I, S. 1–2",
+  "grouping": "Didaktische Bündelung, keine exklusive logische Taxonomie",
+  "groups": [
+    {
+      "id": "ableiten",
+      "title": "Zwingend ableiten",
+      "question": "Was muss gelten, wenn die Prämissen stimmen?",
+      "motion": "Regel + Fall → notwendige Folge",
+      "ids": [
+        "I-01",
+        "I-12"
+      ],
+      "explanation": "Hier geht es um Notwendigkeit: Bei gültiger Form können die Prämissen nicht alle wahr und die Konklusion falsch sein. Ob die Prämissen tatsächlich wahr sind, wird zusätzlich geprüft.",
+      "example": "Alle hier betrachteten Geräte benötigen Strom. Dieses Gerät gehört dazu. Also benötigt es Strom. Beim indirekten Beweis führt die Gegenannahme zum Widerspruch.",
+      "check": "Kannst du wahre Prämissen und trotzdem eine falsche Konklusion denken? Dann ist die deduktive Form nicht gültig.",
+      "scene": "s18-A049",
+      "sceneLabel": "A049 · Ein Gegenbeispiel begrenzt eine Allaussage"
+    },
+    {
+      "id": "erfahrung",
+      "title": "Aus Erfahrung lernen",
+      "question": "Was ist aufgrund der Daten vermutlich der Fall?",
+      "motion": "Fälle / Häufigkeiten → begründete Erwartung",
+      "ids": [
+        "I-02",
+        "I-05",
+        "I-10"
+      ],
+      "explanation": "Induktion verallgemeinert aus Fällen. Statistisches Schliessen arbeitet mit Häufigkeiten und Populationen. Bayesisches Schliessen verändert die Wahrscheinlichkeit einer Hypothese anhand neuer Evidenz und einer Vorwahrscheinlichkeit.",
+      "example": "Viele untersuchte vergleichbare Fälle zeigen ein Muster. Das stützt eine vorläufige Regel. Ein neuer Befund kann unsere Einschätzung erhöhen oder senken, ohne sie sicher zu machen.",
+      "check": "Sind Fälle und Stichprobe passend? Welcher Nenner gilt? Wie unsicher ist die Schätzung? Ein Hinweis ist noch keine Gewissheit.",
+      "scene": "s29-A083",
+      "sceneLabel": "A083 · Welche Bezugsgrösse steckt in den Indien-Zahlen?"
+    },
+    {
+      "id": "erklaeren",
+      "title": "Erklären und Folgen prüfen",
+      "question": "Warum geschieht etwas — und was wäre zu erwarten?",
+      "motion": "Beobachtung → Erklärungsversuch → prüfbare Folge",
+      "ids": [
+        "I-03",
+        "I-06",
+        "I-07",
+        "I-11"
+      ],
+      "explanation": "Abduktion sucht eine passende Erklärung. Ein kausaler Schluss beansprucht eine Ursache-Wirkungs-Beziehung. Ein prädiktiver Schluss sagt Folgen unter Annahmen voraus. Kontrafaktisches Schliessen fragt, was unter anderen Bedingungen gewesen wäre.",
+      "example": "Wenig Umstieg: Fehlt vielleicht der Ladezugang? Wenn das die relevante Ursache ist, müsste ein besserer Zugang unter passenden Bedingungen etwas ändern. Was wäre ohne die Änderung passiert?",
+      "check": "Welche Alternativerklärung oder Drittvariable gibt es? Eine passende Vorhersage beweist die Erklärung nicht allein.",
+      "scene": "s02-A003",
+      "sceneLabel": "A003 · Debattenmüdigkeit als Erklärungshypothese"
+    },
+    {
+      "id": "vergleichen",
+      "title": "Vergleichen und übertragen",
+      "question": "Trägt die Ähnlichkeit auch den neuen Schluss?",
+      "motion": "Quellfall + relevante Gemeinsamkeit → Zielfall",
+      "ids": [
+        "I-04",
+        "I-13"
+      ],
+      "explanation": "Analogien übertragen eine Einsicht über relevante Gemeinsamkeiten. Ein transduktiver Schluss geht besonders von einem Einzelfall zu einem anderen. Beide benötigen die Prüfung entscheidender Unterschiede.",
+      "example": "Steuerbeiträge und Klimabeiträge sind beide Teile einer gemeinsamen Aufgabe. Aber Steuerstaat und internationale Kooperation haben unterschiedliche Regeln und Durchsetzungsmöglichkeiten.",
+      "check": "Welche Gemeinsamkeit trägt den Schluss? Welcher Unterschied könnte ihn entkräften? Eine anschauliche Pointe ist noch keine Widerlegung.",
+      "scene": "s28-A079",
+      "sceneLabel": "A079 · Was trägt die Pferdeanalogie wirklich?"
+    },
+    {
+      "id": "handeln",
+      "title": "Handeln und gemeinsam abwägen",
+      "question": "Was sollen wir tun — unter welchen Bedingungen?",
+      "motion": "Ziel + Werte + Sachgründe → begrenztes Urteil",
+      "ids": [
+        "I-08",
+        "I-14"
+      ],
+      "explanation": "Ein praktischer Schluss verbindet Ziele, Mittel, Nebenbedingungen und normative Prämissen. Dialektisch wird eine Position durch ernsthafte Einwände weiterentwickelt oder eingeschränkt; das ist keine einzelne formale Schlussregel.",
+      "example": "Ladezugang kann den Umstieg erleichtern. Soll er gefördert werden? Dazu braucht es Ziele, Kosten, Gerechtigkeitsnormen und die Prüfung des Einwands, dass manche Menschen trotzdem die Anschaffung nicht finanzieren können.",
+      "check": "Wo steckt die Wertprämisse? Ist das Mittel geeignet und zumutbar? Welcher Einwand verändert dein Urteil?",
+      "scene": "s44-A130",
+      "sceneLabel": "A130 · Koordination und Selbstbestimmung abwägen"
+    }
+  ],
+  "crosscutting": [
+    "I-09"
+  ]
+}

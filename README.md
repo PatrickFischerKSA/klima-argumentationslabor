@@ -59,3 +59,13 @@ Die Prüfstatus unterscheiden ein nur bedingtes Risiko, eine Abgrenzung ohne Feh
 - Alle Argumente direkt: `#argumentliste`
 
 Die Oberfläche verlinkt von jedem Argument zur Definition und von der Definition zurück zu allen Anwendungen und Abgrenzungen. Filter erlauben Schlussform, Prüfkategorie und Prüfstatus zusätzlich zu Thema, Person und Textsuche. Das Framework wird ohne externen Dienst geladen. Eigene Notizen bleiben lokal.
+
+## Unterrichtsübersicht und Originalhandbuch
+
+Das Originalhandbuch ist direkt im Einführungstext des Frameworks verlinkt und unter `material/schlussfolgerungstypen-und-fehlschluesse-handbuch.pdf` verfügbar. Öffnen und Herunterladen sind getrennt angeboten.
+
+Die neue Übersicht gruppiert die 14 Grundformen aus Teil I nach fünf Denkaufgaben: zwingend ableiten; aus Erfahrung lernen; erklären und Folgen prüfen; vergleichen und übertragen; handeln und gemeinsam abwägen. Aufhebbares Schliessen wird als querliegender Geltungsvorbehalt erklärt. Die Gruppen sind ausdrücklich eine didaktische Ergänzung und keine neue exklusive Taxonomie.
+
+Ein durchgehendes, als erfunden gekennzeichnetes Unterrichtsbeispiel verbindet Beobachtung, Hypothese, Prognose, Datenprüfung und begründetes Handeln. Die Übersicht unterscheidet Grundformen, formale Werkzeuge, Fehlerprüfung und psychologische Muster. Jede Gruppe verlinkt zu Definitionen und passenden Gesprächsargumenten. Ein 15-Minuten-Auftrag hilft beim Einsatz.
+
+`schlussformen-uebersicht.html` ist die separat druckbare Fassung; dort sind Beispiele und Arbeitsauftrag bereits aufgeklappt. Der Browser kann sie drucken oder als PDF speichern. `assets/data/teaching-map.json` dokumentiert die Gruppierung.
