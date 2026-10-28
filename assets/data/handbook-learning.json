@@ -1,0 +1,509 @@
+{
+  "version": 1,
+  "chapters": {
+    "aufbau": {
+      "basis": [
+        {
+          "id": "aufbau-basis-1",
+          "phase": "Lernen",
+          "learn": "Eine Behauptung ist das, was begründet werden soll. Ein Grund antwortet auf die Frage: Warum soll das gelten?",
+          "question": "Die Schule soll Trinkbrunnen bauen, weil so weniger Einwegflaschen gebraucht werden. Was ist die Behauptung?",
+          "options": [
+            "Die Schule soll Trinkbrunnen bauen.",
+            "Es werden weniger Einwegflaschen gebraucht.",
+            "Das Wort weil."
+          ],
+          "correct": 0,
+          "explanation": "Der Bau der Trinkbrunnen ist die Forderung. Der erwartete Rückgang der Einwegflaschen wird als Grund genannt."
+        },
+        {
+          "id": "aufbau-basis-2",
+          "phase": "Repetieren",
+          "learn": "Eine Begründung braucht eine Verbindung: Warum spricht gerade dieser Grund für das Ergebnis?",
+          "question": "Welche Ergänzung verbindet den Flaschen-Grund mit der Forderung nach Trinkbrunnen?",
+          "options": [
+            "Alles, was neu ist, ist gut.",
+            "Weniger vermeidbarer Abfall ist ein Ziel, das die Schule mit geeigneten Mitteln verfolgen soll.",
+            "Wer dagegen ist, mag keine Umwelt."
+          ],
+          "correct": 1,
+          "explanation": "Die Ergänzung nennt das Ziel und die normative Brücke. Ob Trinkbrunnen geeignet und zumutbar sind, bleibt zusätzlich zu prüfen."
+        },
+        {
+          "id": "aufbau-basis-3",
+          "phase": "Vertiefen",
+          "learn": "Prüfe getrennt: Stimmt der Grund? Passt er zur Behauptung? Reicht er für diese weitgehende Aussage?",
+          "question": "Eine Untersuchung zeigt weniger Flaschenabfall nach dem Brunnenbau. Ist damit bewiesen, dass jede Schule sofort Brunnen bauen muss?",
+          "options": [
+            "Ja, eine Untersuchung genügt immer.",
+            "Nein, weil Daten nie etwas beitragen.",
+            "Nein. Übertragbarkeit, Kosten und Ziele müssen zusätzlich geprüft werden."
+          ],
+          "correct": 2,
+          "explanation": "Der Befund kann die Forderung stützen. Er ersetzt weder die Prüfung anderer Schulen noch die Abwägung von Kosten und Zielen."
+        }
+      ],
+      "fortgeschritten": [
+        {
+          "id": "aufbau-fortgeschritten-1",
+          "phase": "Lernen",
+          "learn": "Gültigkeit betrifft den Übergang von Prämissen zur Konklusion. Die Wahrheit der Prämissen ist eine zusätzliche Frage.",
+          "question": "Ein deduktives Argument ist gültig. Was ist damit allein gesichert?",
+          "options": [
+            "Seine Prämissen sind tatsächlich wahr.",
+            "Es gibt keinen Fall mit sämtlich wahren Prämissen und falscher Konklusion.",
+            "Seine Konklusion ist unabhängig von den Prämissen wahr."
+          ],
+          "correct": 1,
+          "explanation": "Deduktive Gültigkeit schliesst diese Kombination aus. Erst wahre Prämissen zusammen mit gültiger Form sichern die Wahrheit der Konklusion."
+        },
+        {
+          "id": "aufbau-fortgeschritten-2",
+          "phase": "Repetieren",
+          "learn": "Eine normative Brückenprämisse muss als eigene Annahme sichtbar werden.",
+          "question": "Bessere Ladeinfrastruktur erleichtert den Umstieg. Also soll die Gemeinde sie fördern. Welche Ergänzung wird benötigt?",
+          "options": [
+            "Jede Erleichterung ist automatisch eine Pflicht.",
+            "Die Gemeinde existiert.",
+            "Ein begründetes Ziel und eine Norm, unter welchen Bedingungen die Gemeinde geeignete Mittel fördern soll."
+          ],
+          "correct": 2,
+          "explanation": "Die Sachprämisse allein erzeugt keine Pflicht. Ziel, Zuständigkeit, Zumutbarkeit und Nebenbedingungen müssen normativ begründet werden."
+        },
+        {
+          "id": "aufbau-fortgeschritten-3",
+          "phase": "Vertiefen",
+          "learn": "Defeasible Schlüsse gelten unter Vorbehalt relevanter Ausnahmen.",
+          "question": "Eine neue Information hebt eine bisher begründete Alltagserwartung auf. Welche Einordnung ist angemessen?",
+          "options": [
+            "Das kann ein normaler Fall aufhebbaren Schliessens sein.",
+            "Jede frühere Erwartung war deshalb ein formaler Widerspruch.",
+            "Die neue Information muss ignoriert werden."
+          ],
+          "correct": 0,
+          "explanation": "Eine unter Vorbehalt begründete Erwartung darf durch relevante Zusatzinformation revidiert werden. Das ist etwas anderes als ein Widerspruch innerhalb eines deduktiven Beweises."
+        }
+      ]
+    },
+    "regeln-daten": {
+      "basis": [
+        {
+          "id": "regeln-daten-basis-1",
+          "phase": "Lernen",
+          "learn": "Eine passende Regel kann eine notwendige Folge tragen. Einzelne beobachtete Fälle stützen dagegen oft nur eine Erwartung.",
+          "question": "Alle Geräte dieser Kiste brauchen Strom. Das Radio ist in dieser Kiste. Was folgt, wenn beide Angaben stimmen?",
+          "options": [
+            "Das Radio braucht Strom.",
+            "Alle Radios sind in dieser Kiste.",
+            "Das Radio funktioniert sicher."
+          ],
+          "correct": 0,
+          "explanation": "Die Regel gilt für jedes Gerät dieser Kiste, also auch für dieses Radio. Funktionieren ist eine andere Behauptung."
+        },
+        {
+          "id": "regeln-daten-basis-2",
+          "phase": "Repetieren",
+          "learn": "Beobachtungen machen Erwartungen plausibel, aber nicht automatisch sicher.",
+          "question": "An fünf Tagen war der Bus verspätet. Welche Folgerung ist angemessen?",
+          "options": [
+            "Er wird für immer verspätet sein.",
+            "Auch morgen ist eine Verspätung möglich und aufgrund der Beobachtungen plausibel.",
+            "Morgen ist er sicher pünktlich."
+          ],
+          "correct": 1,
+          "explanation": "Die fünf Tage liefern einen Hinweis. Für eine sichere oder dauerhafte Prognose reichen sie nicht; Fahrplanänderungen und die Auswahl der Tage könnten wichtig sein."
+        },
+        {
+          "id": "regeln-daten-basis-3",
+          "phase": "Vertiefen",
+          "learn": "Ein belegter Ausnahmefall widerlegt eine Aussage über alle Fälle, aber beweist nicht ihr Gegenteil.",
+          "question": "Alle Menschen steigen nur wegen Geld auf ein Elektroauto um. Eine Person nennt glaubhaft den Klimaschutz als einzigen Grund. Was zeigt das?",
+          "options": [
+            "Niemand achtet auf Geld.",
+            "Alle handeln wegen Klimaschutz.",
+            "Die Aussage über alle Menschen ist so nicht haltbar."
+          ],
+          "correct": 2,
+          "explanation": "Ein Gegenbeispiel reicht gegen diese Allaussage. Es zeigt nicht, wie häufig die verschiedenen Motive insgesamt vorkommen."
+        }
+      ],
+      "fortgeschritten": [
+        {
+          "id": "regeln-daten-fortgeschritten-1",
+          "phase": "Lernen",
+          "learn": "Modus ponens: Wenn P, dann Q; P; also Q. Die Umkehrung aus Q auf P ist damit nicht gedeckt.",
+          "question": "Wenn P, dann Q. Q ist der Fall. Also P. Was ist das Problem?",
+          "options": [
+            "Es ist immer Modus ponens.",
+            "Es ist Modus tollens.",
+            "Q könnte auch aus einem anderen Grund gelten; die Form ist nicht gültig."
+          ],
+          "correct": 2,
+          "explanation": "Die Bejahung des Konsequens erlaubt Q ohne P. Eine passende Beobachtung beweist die gewählte Erklärung deshalb nicht deduktiv."
+        },
+        {
+          "id": "regeln-daten-fortgeschritten-2",
+          "phase": "Repetieren",
+          "learn": "Modus tollens nutzt die Negation einer notwendigen Folge.",
+          "question": "Welche Form ist Modus tollens?",
+          "options": [
+            "Wenn P, dann Q; nicht Q; also nicht P.",
+            "Wenn P, dann Q; nicht P; also nicht Q.",
+            "Wenn P, dann Q; Q; also P."
+          ],
+          "correct": 0,
+          "explanation": "Wenn Q unter P notwendig wäre, aber Q nicht gilt, kann P nicht gelten. Die Negation des Antezedens und die Bejahung des Konsequens sind davon verschieden."
+        },
+        {
+          "id": "regeln-daten-fortgeschritten-3",
+          "phase": "Vertiefen",
+          "learn": "Induktive Stärke hängt von Auswahl, Umfang und Repräsentativität der Fälle ab.",
+          "question": "Eine Umfrage in einer einzigen freiwilligen Onlinegruppe wird auf die ganze Bevölkerung übertragen. Was ist die zentrale Prüfaufgabe?",
+          "options": [
+            "Ob die Grafik farbig ist.",
+            "Ob Selbstselektion und Zusammensetzung der Gruppe die Übertragung verzerren.",
+            "Ob jeder Befragte denselben Namen hat."
+          ],
+          "correct": 1,
+          "explanation": "Eine grosse Anzahl allein beseitigt eine verzerrte Auswahl nicht. Für die Übertragung muss die Stichprobe zur Zielpopulation passen."
+        }
+      ]
+    },
+    "erklaeren-vergleichen": {
+      "basis": [
+        {
+          "id": "erklaeren-vergleichen-basis-1",
+          "phase": "Lernen",
+          "learn": "Eine Erklärung nennt einen möglichen Grund für eine Beobachtung. Sie muss gegen andere Erklärungen geprüft werden.",
+          "question": "In einem Quartier gibt es wenig Umstieg auf Elektroautos und wenige Ladeplätze. Was ist zunächst angemessen?",
+          "options": [
+            "Die fehlenden Ladeplätze könnten mitverantwortlich sein.",
+            "Die Ladeplätze sind sicher die einzige Ursache.",
+            "Ladeplätze können niemals eine Rolle spielen."
+          ],
+          "correct": 0,
+          "explanation": "Das gemeinsame Auftreten macht eine Erklärung denkbar. Einkommen, Wohnsituation und weitere Gründe bleiben zu prüfen."
+        },
+        {
+          "id": "erklaeren-vergleichen-basis-2",
+          "phase": "Repetieren",
+          "learn": "Ein Vergleich trägt nur, wenn die Gemeinsamkeit für die Folgerung wichtig ist.",
+          "question": "Steuern und Klimaschutz sind Gemeinschaftsaufgaben. Welcher Unterschied ist für die Übertragung besonders wichtig?",
+          "options": [
+            "Die Wörter haben verschiedene Längen.",
+            "Steuern können in einem Staat anders durchgesetzt werden als weltweite Klimabeiträge.",
+            "Beide kommen in Diskussionen vor."
+          ],
+          "correct": 1,
+          "explanation": "Unterschiedliche Durchsetzung kann den Schluss begrenzen. Die Länge der Wörter betrifft die Begründung nicht."
+        },
+        {
+          "id": "erklaeren-vergleichen-basis-3",
+          "phase": "Vertiefen",
+          "learn": "Wenn eine erwartete Folge eintritt, kann sie mehrere Erklärungen haben.",
+          "question": "Nach neuen Ladeplätzen steigt der Umstieg. Was sollte man zusätzlich prüfen?",
+          "options": [
+            "Nichts mehr: Die Ursache ist bewiesen.",
+            "Ob die Ladeplätze schön aussehen.",
+            "Ob gleichzeitig etwa Preise oder Förderungen verändert wurden."
+          ],
+          "correct": 2,
+          "explanation": "Andere gleichzeitige Veränderungen könnten ebenfalls den Umstieg erklären. Die Beobachtung allein isoliert die Wirkung der Ladeplätze nicht."
+        }
+      ],
+      "fortgeschritten": [
+        {
+          "id": "erklaeren-vergleichen-fortgeschritten-1",
+          "phase": "Lernen",
+          "learn": "Abduktion wählt eine vergleichsweise gute Erklärung. Ein kausaler Schluss beansprucht eine Ursache-Wirkungs-Beziehung.",
+          "question": "Welche Aussage ist zunächst eine abduktive Hypothese?",
+          "options": [
+            "Die geringe Umstiegsrate könnte durch fehlenden Ladezugang erklärt werden.",
+            "Fehlender Ladezugang ist durch diese Vermutung bereits als Ursache bewiesen.",
+            "Jede beobachtete Korrelation ist eine Ursache."
+          ],
+          "correct": 0,
+          "explanation": "Die erste Aussage schlägt eine Erklärung vor. Ihr Vorrang gegenüber Alternativen und die Kausalität müssen erst geprüft werden."
+        },
+        {
+          "id": "erklaeren-vergleichen-fortgeschritten-2",
+          "phase": "Repetieren",
+          "learn": "Kausale Prüfung benötigt einen geeigneten Vergleich und Aufmerksamkeit für Störfaktoren.",
+          "question": "Nach einer Förderung steigt die Nutzung; zugleich sinken die Marktpreise. Was begrenzt die kausale Zuschreibung?",
+          "options": [
+            "Zeitliche Reihenfolge ist niemals relevant.",
+            "Die Förderung ist sicher wirkungslos.",
+            "Die Wirkung der Förderung ist von der Preisänderung noch nicht getrennt."
+          ],
+          "correct": 2,
+          "explanation": "Beide Veränderungen können beitragen. Ein geeigneter Vergleich oder ein begründetes Modell muss helfen, ihren jeweiligen Einfluss zu unterscheiden."
+        },
+        {
+          "id": "erklaeren-vergleichen-fortgeschritten-3",
+          "phase": "Vertiefen",
+          "learn": "Eine Analogie überträgt anhand relevanter struktureller Gemeinsamkeiten. Unterschiede sind nach ihrer Bedeutung für den Schluss zu prüfen.",
+          "question": "Ein Vergleich zwischen kleinem Konsumverzicht und einem Tierbild soll eine Wirkung auf den Ölmarkt widerlegen. Was ist die stärkste Prüfung?",
+          "options": [
+            "Ob das Bild humorvoll ist.",
+            "Ob Nachfragebündelung, Preisanpassung und Marktreaktionen im Vergleich angemessen abgebildet werden.",
+            "Ob jede anschauliche Analogie zwingend falsch ist."
+          ],
+          "correct": 1,
+          "explanation": "Entscheidend ist die übertragene Struktur. Eine Pointe kann relevante Marktmechanismen auslassen und damit die Reichweite des Vergleichs begrenzen."
+        }
+      ]
+    },
+    "abwägen": {
+      "basis": [
+        {
+          "id": "abwägen-basis-1",
+          "phase": "Lernen",
+          "learn": "Eine Handlungsempfehlung verbindet Sachwissen mit einem Ziel oder Wert.",
+          "question": "Welche Aussage nennt einen Wert statt nur einen Sachverhalt?",
+          "options": [
+            "Die Kosten sollen fair verteilt werden.",
+            "Die Anlage kostet 20000 Franken.",
+            "Die Anlage steht im Schulhof."
+          ],
+          "correct": 0,
+          "explanation": "Fairness bezeichnet hier einen Massstab dafür, wie etwas sein soll. Kosten und Standort sind Sachangaben."
+        },
+        {
+          "id": "abwägen-basis-2",
+          "phase": "Repetieren",
+          "learn": "Ein guter Einwand kann eine Empfehlung verbessern, ohne das Ziel aufzugeben.",
+          "question": "Ein Vorschlag spart insgesamt Geld, belastet aber einkommensschwache Haushalte am Anfang stark. Wie reagierst du angemessen?",
+          "options": [
+            "Den Einwand ignorieren, weil insgesamt Geld gespart wird.",
+            "Anfangsbelastung prüfen und den Vorschlag gegebenenfalls durch Unterstützung ergänzen.",
+            "Behaupten, dass deshalb Klimaschutz immer unmöglich ist."
+          ],
+          "correct": 1,
+          "explanation": "Ein Gesamtvorteil löst das Verteilungsproblem nicht automatisch. Unterstützung kann eine passende Ergänzung sein; ihre Wirkung muss geprüft werden."
+        },
+        {
+          "id": "abwägen-basis-3",
+          "phase": "Vertiefen",
+          "learn": "Eine begrenzte Empfehlung nennt Bedingungen, unter denen sie trägt.",
+          "question": "Welche Forderung ist am besten begründet und begrenzt?",
+          "options": [
+            "Neue Technik ist immer gut.",
+            "Jede Massnahme muss ohne Kosten sein.",
+            "Die Schule soll die Massnahme umsetzen, wenn sie wirksam, bezahlbar und fair gestaltet ist."
+          ],
+          "correct": 2,
+          "explanation": "Die dritte Aussage macht Bedingungen sichtbar. Ob diese erfüllt sind, braucht weitere Belege und eine begründete Bewertung."
+        }
+      ],
+      "fortgeschritten": [
+        {
+          "id": "abwägen-fortgeschritten-1",
+          "phase": "Lernen",
+          "learn": "Ein praktischer Schluss verbindet Ziele, geeignete Mittel und normative Nebenbedingungen.",
+          "question": "Welche Prämissenkombination trägt eine begrenzte Handlungsempfehlung am besten?",
+          "options": [
+            "Das Mittel ist neu; also muss es verwendet werden.",
+            "Die Fachperson fordert es; weitere Gründe sind unnötig.",
+            "Das Ziel ist begründet; das Mittel geeignet und unter Kosten-, Fairness- und Zuständigkeitsbedingungen vertretbar."
+          ],
+          "correct": 2,
+          "explanation": "Ein praktischer Schluss benötigt mehr als Neuheit oder Autorität. Auch Alternativen und die Erfüllung der Nebenbedingungen sind zu prüfen."
+        },
+        {
+          "id": "abwägen-fortgeschritten-2",
+          "phase": "Repetieren",
+          "learn": "Dialektisches Prüfen nimmt einen ernsthaften Einwand auf und entwickelt die Position weiter.",
+          "question": "Ein Einwand zur fehlenden Vorfinanzierung trifft eine pauschale Förderempfehlung. Welche Reaktion ist dialektisch produktiv?",
+          "options": [
+            "Den Geltungsbereich begrenzen und eine überprüfbare Finanzierungsergänzung erwägen.",
+            "Die Person des Einwenders abwerten.",
+            "Den Einwand wortlos wiederholen."
+          ],
+          "correct": 0,
+          "explanation": "Die Position wird am Einwand präzisiert. Das beweist die Ergänzung noch nicht, macht aber eine sachliche weitere Prüfung möglich."
+        },
+        {
+          "id": "abwägen-fortgeschritten-3",
+          "phase": "Vertiefen",
+          "learn": "Ein Sein-Sollen-Problem entsteht, wenn eine normative Konklusion ohne begründete normative Brücke beansprucht wird.",
+          "question": "Welche Rekonstruktion behandelt das Problem korrekt?",
+          "options": [
+            "Die Massnahme ist effizient, also ist sie allein deshalb moralisch verpflichtend.",
+            "Effizienz ist ein Sachgrund; ob sie eine Pflicht trägt, erfordert zusätzliche normative Prämissen.",
+            "Normative Urteile können niemals Gründe haben."
+          ],
+          "correct": 1,
+          "explanation": "Ein empirischer Vorteil ist relevant, ersetzt aber nicht den Wertmassstab. Die erforderliche normative Ergänzung kann selbst diskutiert und begründet werden."
+        }
+      ]
+    },
+    "stolperstellen": {
+      "basis": [
+        {
+          "id": "stolperstellen-basis-1",
+          "phase": "Lernen",
+          "learn": "Prüfe den Grund einer Aussage. Ein persönlicher Vorwurf widerlegt ihn nicht automatisch.",
+          "question": "Du fliegst selbst, also ist deine Berechnung der Emissionen falsch. Was fehlt?",
+          "options": [
+            "Eine Prüfung, welcher Rechenschritt oder Beleg falsch sein soll.",
+            "Ein schärferer persönlicher Vorwurf.",
+            "Ein Hinweis auf die Kleidung der Person."
+          ],
+          "correct": 0,
+          "explanation": "Persönliches Verhalten kann eine eigene Frage sein. Um die Berechnung zu widerlegen, muss man ihre Daten oder ihre Rechnung prüfen."
+        },
+        {
+          "id": "stolperstellen-basis-2",
+          "phase": "Repetieren",
+          "learn": "Zwei vorgeschlagene Möglichkeiten sind nicht unbedingt die einzigen.",
+          "question": "Entweder wir verbieten jede Reise oder wir tun gar nichts. Welche Prüfung hilft?",
+          "options": [
+            "Wer hat den Satz lauter gesagt?",
+            "Gibt es sinnvolle Zwischenwege, etwa andere Verkehrsmittel oder weniger besonders belastende Reisen?",
+            "Welche der beiden Antworten klingt kürzer?"
+          ],
+          "correct": 1,
+          "explanation": "Die Aussage lässt mögliche Alternativen aus. Die Zwischenwege müssen anschliessend ebenfalls auf Wirkung und Zumutbarkeit geprüft werden."
+        },
+        {
+          "id": "stolperstellen-basis-3",
+          "phase": "Vertiefen",
+          "learn": "Ein Hinweis auf andere ist relevant, wenn er die Sachfrage klärt. Er lenkt ab, wenn er ihre Prüfung ersetzt.",
+          "question": "Welche Antwort nimmt die internationale Dimension sachlich auf?",
+          "options": [
+            "Andere emittieren auch, deshalb brauchen wir hier nichts zu prüfen.",
+            "Wer andere Länder erwähnt, begeht immer einen Fehler.",
+            "Wir prüfen unseren Beitrag und zugleich, welche internationale Zusammenarbeit seine Wirkung verstärkt."
+          ],
+          "correct": 2,
+          "explanation": "Die dritte Antwort verbindet beide Aufgaben. Ein internationaler Vergleich ist nicht schon an sich eine Ablenkung."
+        }
+      ],
+      "fortgeschritten": [
+        {
+          "id": "stolperstellen-fortgeschritten-1",
+          "phase": "Lernen",
+          "learn": "Ad hominem und eine sachlich relevante Prüfung von Glaubwürdigkeit sind zu unterscheiden.",
+          "question": "Eine Studie wird wegen der unsympathischen Person verworfen, ohne Daten oder Methode zu prüfen. Was passt am besten?",
+          "options": [
+            "Ein gültiger indirekter Beweis.",
+            "Eine relevante Widerlegung der Daten.",
+            "Ein sachlich unbegründeter Personenangriff als Ersatz für die Argumentprüfung."
+          ],
+          "correct": 2,
+          "explanation": "Unsympathie widerlegt keine Daten. Anders wäre eine begründete Prüfung konkreter Interessenkonflikte oder methodischer Mängel."
+        },
+        {
+          "id": "stolperstellen-fortgeschritten-2",
+          "phase": "Repetieren",
+          "learn": "Expertise kann Evidenz vermitteln. Ein Autoritätsfehlschluss benötigt eine genauere Begründung als bloss die Erwähnung einer Fachperson.",
+          "question": "Welche Berufung auf Expertise ist am besten abgesichert?",
+          "options": [
+            "Passende Fachkompetenz, überprüfbare Belege und die Grenzen der Aussage werden genannt.",
+            "Berühmtheit ersetzt jede Prüfung.",
+            "Ein Fachpreis entscheidet automatisch jede Wertfrage."
+          ],
+          "correct": 0,
+          "explanation": "Fachkompetenz muss zur konkreten Behauptung passen. Sie ersetzt weder die Evidenzprüfung noch die normative Begründung einer politischen Forderung."
+        },
+        {
+          "id": "stolperstellen-fortgeschritten-3",
+          "phase": "Vertiefen",
+          "learn": "Whataboutism bezeichnet eine Ablenkung von der zu prüfenden Frage, nicht jeden Vergleich mit anderen Akteuren.",
+          "question": "Welche Diagnose ist am sorgfältigsten?",
+          "options": [
+            "Jeder Hinweis auf Auslandsemissionen ist Whataboutism.",
+            "Prüfen, ob der internationale Hinweis die Wirksamkeitsfrage klärt oder die eigene Prüfung ohne Sachgrund ersetzt.",
+            "Internationale Vergleiche sind immer gültige Widerlegungen."
+          ],
+          "correct": 1,
+          "explanation": "Die Funktion im Argument entscheidet. Internationale Abhängigkeiten können relevant sein; eine blosse Ablenkung trägt dagegen keine Entlastung."
+        }
+      ]
+    },
+    "arbeitsbogen": {
+      "basis": [
+        {
+          "id": "arbeitsbogen-basis-1",
+          "phase": "Lernen",
+          "learn": "Beginne mit einer genauen Rekonstruktion, bevor du bewertest.",
+          "question": "Was notierst du zuerst zu einer Filmszene?",
+          "options": [
+            "Behauptung, genannten Grund, sprechende Person und Filmzeit.",
+            "Nur ob dir die Person sympathisch ist.",
+            "Sofort einen möglichst komplizierten Fehlernamen."
+          ],
+          "correct": 0,
+          "explanation": "Damit bleibt nachvollziehbar, was du prüfst. Erst danach folgt die Einordnung und Bewertung."
+        },
+        {
+          "id": "arbeitsbogen-basis-2",
+          "phase": "Repetieren",
+          "learn": "Ein eigenes Urteil nennt auch, was noch offen bleibt.",
+          "question": "Welche Rückmeldung hilft beim Weiterlernen?",
+          "options": [
+            "Das ist einfach falsch.",
+            "Der Vergleich überzeugt mich nur, wenn die Durchsetzung ähnlich ist; genau das muss geprüft werden.",
+            "Ich habe recht, weil ich recht habe."
+          ],
+          "correct": 1,
+          "explanation": "Die Rückmeldung nennt den tragenden Punkt, eine Bedingung und den nächsten Prüfschritt."
+        },
+        {
+          "id": "arbeitsbogen-basis-3",
+          "phase": "Vertiefen",
+          "learn": "Unterscheide eine offene Frage von einem nachgewiesenen Fehler.",
+          "question": "Eine Aussage enthält keine Quellenangabe im kurzen Ausschnitt. Was darfst du sicher festhalten?",
+          "options": [
+            "Die Aussage ist bewiesen falsch.",
+            "Die Person lügt.",
+            "Der Beleg bleibt im Ausschnitt offen und muss gesucht werden."
+          ],
+          "correct": 2,
+          "explanation": "Ein fehlender Beleg im Ausschnitt ist eine Prüfaufgabe. Er beweist weder Falschheit noch bewusste Täuschung."
+        }
+      ],
+      "fortgeschritten": [
+        {
+          "id": "arbeitsbogen-fortgeschritten-1",
+          "phase": "Lernen",
+          "learn": "Rekonstruktion, Zuordnung und Bewertung sind getrennte Arbeitsschritte.",
+          "question": "Welche Reihenfolge ist fachlich sinnvoll?",
+          "options": [
+            "Fehleretikett wählen und passende Aussagen suchen.",
+            "Sympathie bewerten und danach Belege auswählen.",
+            "Konklusion und Prämissen rekonstruieren, Schlussanspruch bestimmen, Übergang und Evidenz prüfen."
+          ],
+          "correct": 2,
+          "explanation": "Die Diagnose folgt aus einer nachvollziehbaren Rekonstruktion. So lassen sich auch implizite Ergänzungen als eigene Annahmen kennzeichnen."
+        },
+        {
+          "id": "arbeitsbogen-fortgeschritten-2",
+          "phase": "Repetieren",
+          "learn": "Eine fallacy-Diagnose muss einen konkreten nicht tragfähigen Übergang zeigen.",
+          "question": "Für eine Kausalbehauptung fehlen im Ausschnitt kontrollierte Vergleiche. Welches Urteil ist angemessen?",
+          "options": [
+            "Die Evidenzfrage bleibt offen; ein bestimmter Kausalfehlschluss ist dadurch noch nicht nachgewiesen.",
+            "Die Behauptung ist nachweislich falsch.",
+            "Die Person täuscht absichtlich."
+          ],
+          "correct": 0,
+          "explanation": "Die fehlende Evidenz ist ein Prüfbedarf. Eine spezifische Fehlschlussdiagnose benötigt zusätzliche Rekonstruktion und Begründung."
+        },
+        {
+          "id": "arbeitsbogen-fortgeschritten-3",
+          "phase": "Vertiefen",
+          "learn": "Eine gute Gesamtbewertung benennt Tragfähigkeit, Grenze und mögliche Revision.",
+          "question": "Welche Schlussbewertung ist am präzisesten?",
+          "options": [
+            "Das ist eine Analogie, also falsch.",
+            "Die Analogie stützt den Kooperationsgedanken; unterschiedliche Durchsetzung begrenzt die Übertragung. Vergleichbare institutionelle Bedingungen würden sie stärken.",
+            "Das ist ein Argument, also wahr."
+          ],
+          "correct": 1,
+          "explanation": "Die Bewertung unterscheidet den Beitrag des Vergleichs von seiner Reichweite und nennt eine prüfbare Bedingung für eine stärkere Übertragung."
+        }
+      ]
+    }
+  }
+}

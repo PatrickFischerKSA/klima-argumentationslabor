@@ -89,3 +89,8 @@ Daten: `assets/data/levels.json`, Offline-Fassung `assets/levels-data.js`. Steue
 ## Handbuch in zwei Lernstufen
 
 `handbuch.html` bietet sechs Basiskapitel mit einzeln zuschaltbaren Differenzierungen. Der globale Lernniveauschalter öffnet alle Vertiefungen und das vollständige Register mit 164 Kategorien. Zwei feste Druckfassungen stehen unter `material/handbuch-basis.pdf` (6 Seiten) und `material/handbuch-fortgeschritten.pdf` (6 Leseseiten plus 14 Originalseiten) bereit. Alle Quellenverweise meinen die ursprünglichen Seiten des Originalhandbuchs.
+
+
+## Selbstlernen im Handbuch
+
+Alle sechs Kapitel enthalten drei Lernschritte mit Autokorrektur: Lernen, Repetieren und Vertiefen. Basis und Fortgeschritten haben je 18 eigenständige Fragen mit begründeter Lösung. Fehler lassen sich pro Kapitel oder über den Lernstand gezielt aufsuchen und erneut bearbeiten. Die Antworten werden getrennt je Modus im Browser gespeichert (localStorage); es werden keine Antworten übertragen. Alle Lernschritte können auch ohne vorgegebene Reihenfolge gewählt werden. Die festen PDFs bleiben die Lesefassungen; interaktive Übungen befinden sich in `handbuch.html`.

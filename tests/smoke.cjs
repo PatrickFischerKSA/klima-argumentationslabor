@@ -79,3 +79,14 @@ assert.equal(hbData.chapters.length,6);
 for(const ch of hbData.chapters){assert(ch.blocks.length>=2);assert(ch.tasks.length);for(const id of ch.depth)assert(fw.entries.some(e=>e.id===id));assert(scenes.some(s=>s.id===ch.scene.id&&s.arguments.some(a=>a.id===ch.scene.argument)));}
 for(const file of ['handbuch.html','assets/handbook.js','material/handbuch-basis.pdf','material/handbuch-fortgeschritten.pdf'])assert(fs.existsSync(path.join(root,file)));
 console.log('OK: Sechs Handbuchkapitel mit gültigen Vertiefungen, Filmszenen und zwei Druckfassungen.');
+const learning=JSON.parse(fs.readFileSync(path.join(root,'assets/data/handbook-learning.json'),'utf8'));
+const {grade}=require('../assets/handbook-learning.js');
+const learningContext={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/handbook-learning-data.js'),'utf8'),learningContext);
+assert.equal(JSON.stringify(learningContext.window.KLIMA_HANDBOOK_LEARNING),JSON.stringify(learning));
+let questionCount=0;const learningIds=new Set();
+for(const c of hbData.chapters)for(const mode of ['basis','fortgeschritten']){
+ const qs=learning.chapters[c.id][mode];assert.equal(qs.length,3);assert.deepEqual(qs.map(q=>q.phase),['Lernen','Repetieren','Vertiefen']);
+ for(const q of qs){assert(!learningIds.has(q.id));learningIds.add(q.id);questionCount++;assert(q.learn.length>40&&q.explanation.length>70);assert.equal(q.options.length,3);assert.equal(new Set(q.options).size,3);assert.equal(grade(q,null),null);assert.equal(grade(q,-1),null);assert.equal(grade(q,3),null);assert.equal(grade(q,q.correct).correct,true);for(let i=0;i<3;i++)assert.equal(grade(q,i).correct,i===q.correct);}
+}
+assert.equal(questionCount,36);
+console.log('OK: 36 individuelle Selbstlernfragen in beiden Modi, Autokorrektur und Offline-Daten konsistent.');
