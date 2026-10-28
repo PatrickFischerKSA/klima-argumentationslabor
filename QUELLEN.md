@@ -53,3 +53,10 @@ Die fünf Denkaufgaben und der querliegende Vorbehalt bündeln sämtliche 14 Gru
 ## Basis- und Fortgeschrittenenmodus
 
 Die fünf Basisgruppen und die 110 vereinfachten Szenenfragen sind eigene didaktische Ergänzungen. Sie sind nicht als zusätzliche Kategorien oder Zitate des Handbuchs ausgewiesen. Jede der 163 vorhandenen Argumenteinheiten bleibt mit ihrer vollständigen Handbuchanalyse verknüpft. Der Basismodus zeigt einen geeigneten Einstieg über einen Denkweg; mögliche Mehrfachzuordnungen stehen weiterhin im Fortgeschrittenenmodus.
+
+
+### Einstieg und Gesprächsbild
+
+Gesprächsbild: Einzelbild bei 31:04.920 aus der bereitgestellten lokalen Fassung der SRF-Sendung «Sternstunde Philosophie: Klimakrise – Warum handeln wir nicht?», © SRF. Reto Knutti ist links, Barbara Bleisch rechts zu sehen. Das Bild dient der Einführung in das hier untersuchte Gespräch; die Bildlegende verlinkt die Originalsendung.
+
+Personenverweise: [Reto Knutti, ETH Zürich](https://usys.ethz.ch/personen/profil.knutti.html) und [Barbara Bleisch](https://barbarableisch.ch/). Die knappen Rollenangaben wurden anhand der offiziellen [ETH-Biografie](https://esc.ethz.ch/people/person-detail.knutti.html) und [Barbara Bleischs Selbstdarstellung](https://barbarableisch.ch/ueber-mich/) geprüft.
