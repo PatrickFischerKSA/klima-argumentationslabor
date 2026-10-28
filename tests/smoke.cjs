@@ -127,3 +127,33 @@ assert.equal(sceneQuiz.progress({[bq.id]:{selected:bq.correct,checked:true,attem
 sceneQuizContext.window.KLIMA_UNIT={selected:()=>scenes.slice(26,33),questions:(s,level)=>[sceneLearning.scenes[s.id][level].at(-1)]};sceneApi.setState(quizRoundTrip);assert.equal(sceneApi.progress('s28').total,1);assert.equal(Object.keys(sceneApi.getState()).length,2,'Core-question scope must not discard argument answers on import');
 assert(h.indexOf('assets/study-units.js')<h.indexOf('assets/scene-learning.js'));
 console.log('OK: Individuelle Rückmeldung zu allen 1308 Antwortoptionen, alte Antworten werden nicht umgedeutet; 8 Themenblöcke und sichere Ausschnittsgrenzen.');
+const unitAssessmentData=JSON.parse(fs.readFileSync(path.join(root,'assets/data/unit-assessment.json'),'utf8'));
+const unitAssessmentContext={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/unit-assessment-data.js'),'utf8'),unitAssessmentContext);
+assert.equal(JSON.stringify(unitAssessmentContext.window.KLIMA_UNIT_ASSESSMENT_DATA),JSON.stringify(unitAssessmentData));
+const finalQuiz=require('../assets/unit-assessment.js'),finalIds=new Set();let finalCount=0;
+for(const preset of units.presets)for(const mode of ['basis','fortgeschritten']){
+ const selected=finalQuiz.questionsFor(preset,mode,unitAssessmentData,scenes);assert.equal(selected.length,3);
+ for(const q of selected){finalCount++;assert(!finalIds.has(q.id));finalIds.add(q.id);assert.equal(q.options.length,3);assert.equal(q.optionFeedback.length,3);assert.equal(new Set(q.options).size,3);assert(q.context.length>100);assert(q.optionFeedback.every(t=>t.length>80));assert(chapterIds.has(q.chapter));assert(new Set(q.sources.map(s=>s.scene)).size>=2);
+  for(const source of q.sources){const s=scenes.find(s=>s.id===source.scene);assert(s&&s.arguments.some(a=>a.id===source.argument));assert(units.contains(preset,source.scene));}
+  for(const id of q.framework)assert(fw.entries.some(e=>e.id===id));
+  for(let i=0;i<3;i++){assert.equal(finalQuiz.grade(q,i).correct,i===q.correct);assert.equal(finalQuiz.grade(q,i).feedback,q.optionFeedback[i]);}
+  assert.equal(finalQuiz.grade(q,null),null);assert.equal(finalQuiz.grade(q,99),null);
+  const own={[q.id]:{revision:1,selected:q.correct,checked:true}};assert.equal(finalQuiz.progress(own,selected).done,1);assert.equal(finalQuiz.progress(own,unitAssessmentData.units[preset.id][mode==='basis'?'fortgeschritten':'basis']).done,0);
+ }
+}
+assert.equal(finalCount,48);
+for(let start=1;start<=54;start++)for(let end=start+1;end<=Math.min(55,start+11);end++)for(const mode of ['basis','fortgeschritten']){
+ const selected=finalQuiz.questionsFor({start,end},mode,unitAssessmentData,scenes);assert(selected.length>=2);for(const q of selected){assert(new Set(q.sources.map(s=>s.scene)).size>=2);assert(q.sources.every(s=>units.contains({start,end},s.scene)));assert.equal(q.options.length,3);assert.equal(q.optionFeedback.length,3);}
+}
+assert(h.indexOf('assets/unit-assessment-data.js')<h.indexOf('assets/unit-assessment.js'));
+console.log('OK: 48 szenenübergreifende Abschlussfragen mit 144 Einzelrückmeldungen, getrennte Modi und passende Fragen für jeden eigenen Ausschnitt.');
+const finishB=unitAssessmentData.units.kosten.basis[0],finishA=unitAssessmentData.units.kosten.fortgeschritten[0],customFinish=finalQuiz.customQuestions({start:1,end:2},'basis',scenes)[0];
+const finishBackup={
+ [finishB.id]:{revision:1,selected:finishB.correct,checked:true},
+ [finishA.id]:{revision:1,selected:(finishA.correct+1)%3,checked:true},
+ [customFinish.id]:{revision:1,selected:customFinish.correct,checked:true},
+ unknown:{revision:1,selected:0,checked:true},
+ 'custom-1-55-basis-vergleich':{revision:1,selected:0,checked:true}
+};
+const cleanedFinish=finalQuiz.cleanState(JSON.parse(JSON.stringify(finishBackup)),unitAssessmentData,scenes);assert.equal(Object.keys(cleanedFinish).length,3);assert.equal(finalQuiz.progress(cleanedFinish,[finishB]).done,1);assert.equal(finalQuiz.progress(cleanedFinish,[finishA]).wrong,1);assert.equal(finalQuiz.progress(cleanedFinish,[customFinish]).done,1);assert.deepEqual(finalQuiz.cleanState(null,unitAssessmentData,scenes),{});assert.deepEqual(finalQuiz.cleanState({[finishB.id]:{revision:1,selected:99,checked:true}},unitAssessmentData,scenes),{});
+console.log('OK: Abschluss-Lernstände beider Modi und eigener Ausschnitte können validiert gesichert und wiederhergestellt werden.');

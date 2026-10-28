@@ -112,3 +112,12 @@ Acht zusammenhängende Themenblöcke decken das Gespräch ab. Mit den Reglern k�
 Standard ist eine Kernfrage pro Szene. Über «Argumente genauer üben» oder die Umfangswahl lassen sich alle Argumentübungen der Einheit hinzuschalten. Fortschritt und Fehlerwiederholung beziehen sich auf den gewählten Ausschnitt und Umfang. Leitfragen und ein Abschlussauftrag regen den Vergleich mehrerer Szenen an. Das vollständige Verzeichnis kann unabhängig davon eingeblendet werden.
 
 Die Auswahl bleibt lokal gespeichert und wird über die URL-Parameter `von`, `bis` und `umfang` geteilt. Die JSON-Sicherung enthält die Einheit und sämtliche gespeicherten Antworten, auch ausserhalb des aktuellen Ausschnitts; der Markdown-Export der Szenenübungen folgt der aktuellen Einheit und dem gewählten Umfang.
+
+
+## Szenenübergreifendes Abschlussquiz
+
+Jeder der acht Themenblöcke enthält drei eigene Abschlussfragen je Modus, insgesamt 48 Fragen mit 144 einzeln erläuterten Optionen. Jede Frage verbindet mindestens zwei konkrete Szenen und verlinkt die zugehörigen Argumenteinheiten sowie Handbuchkapitel und Selbstlernabschnitte. Fortgeschritten bietet zusätzlich genaue Frameworkverweise. Die Fragen vergleichen zum Beispiel Gegenbeispiel und Analogie, Sachbefund und normative Brücke, Teilmechanismus und Nettobilanz oder individuelle Belastung und Gesamtvorteil.
+
+Der Einstieg erfolgt über «Abschlussfragen zur Lerneinheit», den Playerbutton «Abschlussquiz: mehrere Szenen verbinden» oder «Einheit abschliessen». Das Quiz steht unter `#unitFinal`. Der Lernstand ist unabhängig von den Szenenübungen und getrennt nach Modus gespeichert. Fehler lassen sich gezielt repetieren; JSON-Sicherung, Import, Zurücksetzen und Journalexport berücksichtigen den Abschluss.
+
+Bei eigenen Ausschnitten werden nur Themenfragen angeboten, deren sämtliche Quellszenen darin enthalten sind. Falls weniger als zwei ausgearbeitete Fragen passen, ergänzen methodische Vergleichsfragen zur ersten und letzten enthaltenen Szene den Abschluss. Die Auswahl erfordert keine zusätzlichen Filmstellen ausserhalb des Ausschnitts. Die Daten liegen in `assets/data/unit-assessment.json`; `assets/unit-assessment-data.js` enthält dieselben Daten für den statischen Offlinebetrieb.

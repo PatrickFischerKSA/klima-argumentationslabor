@@ -56,7 +56,7 @@
  function currentFilmTime(){return video.currentTime+(localClip?active.start:0);}
  function playbackBounds(){return whole?unit.bounds():{start:active.start,end:active.end,duration:active.duration};}
  video.addEventListener('timeupdate',()=>{const b=playbackBounds(),elapsed=Math.max(0,currentFilmTime()-b.start);el('sceneTimeline').value=String(Math.min(elapsed,b.duration));el('scenePosition').textContent=`${format(Math.min(elapsed,b.duration))} / ${format(b.duration)} · Filmzeit ${format(currentFilmTime())}`;
-  if(elapsed>=b.duration-.08&&!segmentEnded){segmentEnded=true;video.pause();el('sceneEnd').hidden=false;el('sceneEnd').textContent=whole?'Lerneinheit beendet. Vergleiche jetzt die Szenen und bearbeite den Abschlussauftrag.':'Szene beendet. Bearbeite ihre Frage oder gehe zur nächsten Szene deiner Einheit.';el('videoStatus').textContent=whole?'Ende des gewählten Ausschnitts erreicht.':'Szenenende erreicht.';}
+  if(elapsed>=b.duration-.08&&!segmentEnded){segmentEnded=true;video.pause();el('sceneEnd').hidden=false;el('sceneEnd').textContent=whole?'Lerneinheit beendet. Vergleiche jetzt die Szenen und bearbeite das Abschlussquiz.':'Szene beendet. Bearbeite ihre Frage oder gehe zur nächsten Szene deiner Einheit.';el('videoStatus').textContent=whole?'Ende des gewählten Ausschnitts erreicht.':'Szenenende erreicht.';}
  });
  video.addEventListener('ended',()=>{segmentEnded=true;el('sceneEnd').hidden=false;});
  video.addEventListener('play',()=>{const b=playbackBounds();if(segmentEnded||currentFilmTime()<b.start-.2||currentFilmTime()>=b.end-.08)seekStart(false);});
@@ -73,7 +73,7 @@
  atTime.onclick=()=>{const now=currentFilmTime(),s=unit.selected().find(s=>now>=s.start&&now<s.end)||(now<unit.bounds().start?unit.first():unit.selected().at(-1));active=s;selectedArgument='';el('youtubeScene').href=`https://www.youtube.com/watch?v=J77-r4-gwxE&t=${Math.floor(s.start)}s`;el('prevScene').disabled=s===unit.first();el('nextScene').disabled=s===unit.selected().at(-1);renderAnalysis();renderCatalog();if(!whole)el('currentSceneTitle').textContent=sceneTitle(active);el('sceneLearning').scrollIntoView({block:'start'});};
  document.addEventListener('klima-unit-change',event=>{if(event.detail.rangeChanged){video.pause();selectScene(unit.first().id,false);}else{renderAnalysis();renderCatalog();}});
  document.addEventListener('klima-unit-catalog',renderCatalog);
- document.addEventListener('klima-unit-open-scene',event=>{video.pause();selectScene(event.detail.id,false,'',true);});
+ document.addEventListener('klima-unit-open-scene',event=>{video.pause();selectScene(event.detail.id,false,event.detail.argument||'',true);});
  document.addEventListener('klima-unit-play',()=>{startUnit(true);el('gespraech').scrollIntoView({block:'start'});});
  // This button also works with physically cut local clips: the journal always gets original-film time.
  el('stamp').onclick=()=>{const t=Math.floor(currentFilmTime());state.time=format(t);hydrate();persist();};
