@@ -94,3 +94,10 @@ Daten: `assets/data/levels.json`, Offline-Fassung `assets/levels-data.js`. Steue
 ## Selbstlernen im Handbuch
 
 Alle sechs Kapitel enthalten drei Lernschritte mit Autokorrektur: Lernen, Repetieren und Vertiefen. Basis und Fortgeschritten haben je 18 eigenständige Fragen mit begründeter Lösung. Fehler lassen sich pro Kapitel oder über den Lernstand gezielt aufsuchen und erneut bearbeiten. Die Antworten werden getrennt je Modus im Browser gespeichert (localStorage); es werden keine Antworten übertragen. Alle Lernschritte können auch ohne vorgegebene Reihenfolge gewählt werden. Die festen PDFs bleiben die Lesefassungen; interaktive Übungen befinden sich in `handbuch.html`.
+
+
+## Selbstlernen direkt an den Filmszenen
+
+Alle 55 Szenen enthalten Autokorrektur-Aufgaben: pro Modus eine Rekonstruktionsfrage zu jeder der 163 Argumenteinheiten und eine eigens auf die jeweilige Szene abgestimmte Vertiefungsfrage. Damit gibt es 218 Aufgaben je Modus (436 insgesamt). Die Basis übt die Unterscheidung von Behauptung und Grund; Fortgeschritten rekonstruiert die Brückenprämisse und prüft den Geltungsanspruch. Jede Aufgabe verlinkt das passende Handbuchkapitel samt Selbstlernabschnitt. Fortgeschritten bietet zusätzlich direkte Kategorienanker; die Kategorien öffnen sich automatisch.
+
+Antworten werden unter `klima-scene-learning-v1` lokal je Szene und Modus gespeichert. Fehler können erneut bearbeitet und Szenen mit offenen Fehlern gezielt aufgerufen werden. Der Fortschritt erscheint im Szenenkatalog. JSON-Sicherung, Import, Markdown-Journal und das vorhandene Zurücksetzen berücksichtigen auch die neuen Szenenübungen. Die Filmposition bleibt bei der Bearbeitung und beim Wechsel des Lernniveaus erhalten.

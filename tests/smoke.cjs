@@ -90,3 +90,33 @@ for(const c of hbData.chapters)for(const mode of ['basis','fortgeschritten']){
 }
 assert.equal(questionCount,36);
 console.log('OK: 36 individuelle Selbstlernfragen in beiden Modi, Autokorrektur und Offline-Daten konsistent.');
+const sceneLearning=JSON.parse(fs.readFileSync(path.join(root,'assets/data/scene-learning.json'),'utf8'));
+const sceneLearningContext={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/scene-learning-data.js'),'utf8'),sceneLearningContext);
+assert.equal(JSON.stringify(sceneLearningContext.window.KLIMA_SCENE_LEARNING_DATA),JSON.stringify(sceneLearning));
+const sceneQuiz=require('../assets/scene-learning.js'),quizIds=new Set(),chapterIds=new Set(hbData.chapters.map(c=>c.id));
+let sceneQuizCount=0;
+for(const s of scenes)for(const level of ['basis','fortgeschritten']){
+ const qs=sceneLearning.scenes[s.id][level];assert.equal(qs.length,s.arguments.length+1);assert.deepEqual(qs.slice(0,-1).map(q=>q.argument),s.arguments.map(a=>a.id));
+ for(const q of qs){
+  assert(!quizIds.has(q.id));quizIds.add(q.id);sceneQuizCount++;assert(q.question.length>35&&q.explanation.length>70);assert(chapterIds.has(q.chapter));assert(s.arguments.some(a=>a.id===q.argument));assert.equal(q.options.length,3);assert.equal(new Set(q.options).size,3);assert(q.refs.length);
+  for(const ref of q.refs){const e=fw.entries.find(e=>e.id===ref.id);assert(e);assert.equal(ref.page,e.page);}
+  assert.equal(sceneQuiz.grade(q,null),null);assert.equal(sceneQuiz.grade(q,3),null);assert.equal(sceneQuiz.grade(q,-1),null);
+  for(let i=0;i<3;i++)assert.equal(sceneQuiz.grade(q,i).correct,i===q.correct);
+ }
+ const q=qs[0],wrong=(q.correct+1)%3;
+ const saved={[q.id]:{selected:wrong,checked:true,attempts:1}};assert.deepEqual(sceneQuiz.progress(saved,qs),{done:0,wrong:1,total:qs.length});
+ saved[q.id]={selected:q.correct,checked:true,attempts:2};assert.equal(sceneQuiz.progress(saved,qs).done,1);assert.equal(sceneQuiz.progress(saved,qs).wrong,0);
+ assert.equal(sceneQuiz.progress(saved,sceneLearning.scenes[s.id][level==='basis'?'fortgeschritten':'basis']).done,0);
+ saved[q.id]={selected:null,checked:false,attempts:2};assert.equal(sceneQuiz.record(saved,q).attempts,2);assert.equal(sceneQuiz.progress(saved,qs).done,0);
+ saved[q.id]={selected:99,checked:true,attempts:2};assert.equal(sceneQuiz.progress(saved,qs).done,0);assert.equal(sceneQuiz.progress(saved,qs).wrong,0);
+}
+assert.equal(sceneQuizCount,436);assert(h.indexOf('assets/scene-learning.js')<h.indexOf('assets/scenes.js'));
+console.log('OK: 436 Szenenübungen für alle 163 Argumente in beiden Modi, gültige Handbuchverweise und getrennte Lernstände.');
+let sceneTestMode='basis',quizStorage='';
+const sceneQuizContext={window:{KLIMA_SCENE_LEARNING_DATA:sceneLearning,KLIMA_SCENES:catalog,KLIMA_FRAMEWORK:fw,KLIMA_LEVEL:{get:()=>sceneTestMode}},localStorage:{getItem:()=>null,setItem:(_key,value)=>{quizStorage=value;}}};
+vm.runInNewContext(fs.readFileSync(path.join(root,'assets/scene-learning.js'),'utf8'),sceneQuizContext);
+const sceneApi=sceneQuizContext.window.KLIMA_SCENE_LEARNING,bq=sceneLearning.scenes.s28.basis[0],aq=sceneLearning.scenes.s28.fortgeschritten[0];
+const sceneBackup={[bq.id]:{selected:bq.correct,checked:true,attempts:1},[aq.id]:{selected:(aq.correct+1)%3,checked:true,attempts:2},unknown:{selected:0,checked:true,attempts:1}};
+sceneApi.setState(sceneBackup);assert.equal(sceneApi.progress('s28').done,1);sceneTestMode='fortgeschritten';assert.equal(sceneApi.progress('s28').wrong,1);assert(!('unknown' in sceneApi.getState()));
+const quizRoundTrip=JSON.parse(quizStorage);sceneApi.setState({});assert.equal(sceneApi.progress('s28').wrong,0);sceneApi.setState(quizRoundTrip);assert.equal(sceneApi.progress('s28').wrong,1);assert(sceneApi.journal().includes('noch zu korrigieren'));assert(sceneApi.journal().includes('Basis: 1 von 218'));
+console.log('OK: Szenen-Lernstand lässt sich sichern, bereinigt importieren, zurücksetzen und als Journal exportieren.');
